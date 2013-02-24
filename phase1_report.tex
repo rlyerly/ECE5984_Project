@@ -44,6 +44,8 @@ Our platform for the first phase of the project was a Snapdragon S3 APQ8060-base
 Most compute-intensive tasks are run on the larger Scorpion cores (which are designated as ``application cores''), the QDSP6000 DSP and the Adreno 220 GPU.  The ARMv7 instruction set architecture (ISA) is the 7th-generation of the ARM ISA.  It is a RISC ISA and contains a standardized 3-stage pipeline (although implementations may contain longer pipelines) and 16 x 32-bit registers.  ARMv7 also defines the NEON SIMD extensions which specify the interface to a 128-bit SIMD core with an independent pipeline and register file.  It can perform basic arithmetic and logic operations on varying size data types, including signed/unsigned 8-bit, 16-bit, 32-bit or 64-bit words.  The QDSP6000 (or ``Hexagon'') DSP is a programmable DSP designed for application use.  It has several features which make it a flexible platform, including symmetric multi-processing and VLIW/SIMD instructions (in fact, Linux has been ported to run on the Hexagon).  The Adreno 220 GPU is used for 2D and 3D rendering on Android.  It implements several graphic APIs and can be used concurrently by several of the other cores for interleaving CPU, DSP and graphics operations.
 
 \subsection{Problem Statement}
+The objective of the first phase of the project was to do a detailed perfomance profiling for a set of hash algorithms provided by the SUPERCOP testsuite. The analyses should try to determine why each algorithm implementation excelled, compared to other implementations,  on the target platform (Dragonboard APQ8060).   
+
 \subsection{Partitioning}
 \subsection{Profiling}
 
