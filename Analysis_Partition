@@ -1,0 +1,36 @@
+Kevin:
+
+blake256
+blake32
+blake512
+blake64
+cubehash816
+groestl256
+---
+Reese or Phil:
+
+groestl512
+jh224
+jh256
+jh384
+jh512
+keccak
+---
+Reese or Phil:
+
+keccakc1024
+keccakc256
+keccakc418
+keccakc512
+keccakc768
+md5
+---
+Rob:
+
+mgrostl256
+sha256
+sha512
+skein10241024
+skein256256
+skein512256
+skein512512
