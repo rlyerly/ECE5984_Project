@@ -1,5 +1,6 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{graphicx,float}
+\usepackage{cite}
 
 \title{\LARGE
     Project Phase 1: A Detailed Analysis of SUPERCOP on the Dragonboard APQ8060.
@@ -138,10 +139,8 @@ The graph above also shares the step like characteristics of the other graphs. E
 
 
 \subsection{groestl512}
-\subsection{jh224}
-\subsection{jh256}
-\subsection{jh384}
-\subsection{jh512}
+\subsection{jh}
+\input{p1/jh.tex}
 \subsection{keccak}
 \subsection{keccakc1024}
 \subsection{keccakc256}
@@ -232,4 +231,7 @@ This instance of the Skein hash function has a block size of 512-bits (64 bytes)
 %   - any overall conclusion we can draw from the results of ALL the graphs
 %   - lessons learned
 \section*{Conclusions}
+
+\bibliography{phase1_bib}{}
+\bibliographystyle{plain}
 \end{document}
