@@ -1,0 +1,27 @@
+A large portion of this project is profiling the various algorithms and
+implementations so that we would have data to analyze. Clearly it would be
+practically infeasible to do all of the performance testing by hand, as that
+would involve running several hundred algorithms, and then determining which one
+is the best before doing the analysis. This would have involved a great amount
+of work, not only between coordinating access to the board, but also
+determining how to compile any given algorithm.
+
+Fortunately the algorithms were distributed in a performance profiling toolkit
+called SUPERCOP. As we had set up a Debian chroot on the Dragonboard, and
+therefore had a fully functional GNU/Linux userland and compilation environment,
+it was possible to run the SUPERCOP suite. We however did not need to run the
+entire suite of tools, nor did we need to run the entire gamut of compilers and
+optimizers, so in an effort to make the tests more efficient, we modified the
+toolkit to better suit it to our needs. We removed a large number of compilers
+that never made the official SUPERCOP list, and removed any and all algorithms
+and benchmarks that would not be necessary for us to run. We also modified the
+timeout so that algorithms could no hang for an hour at a time, given that we
+were aiming to test the fastest algorithm.
+
+By electing to use an automated method rather than doing the profiling by hand,
+we increased our throughput by eliminating wait times between runs as well as
+time when we would need to be asleep. Further this allowed us to begin
+considering analysis once we had extracted partial data. The SUPERCOP scripts
+allowed us to automate not only the testing but the determination of the best
+algorithm. Automation of the profiling was key in completing the project in a
+timely manner.
