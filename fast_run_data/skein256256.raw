@@ -1,0 +1,238 @@
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 894651352 1188069685 crypto_hash/skein256256/arm gcc_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 779599353 1188066455 crypto_hash/skein256256/arm gcc_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 822720720 1188075920 crypto_hash/skein256256/arm gcc_-fno-schedule-insns_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41561 874632566 1188066190 crypto_hash/skein256256/arm gcc_-funroll-loops_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41588 829460871 1188076635 crypto_hash/skein256256/arm gcc_-funroll-loops_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41529 948972957 1188076325 crypto_hash/skein256256/arm gcc_-funroll-loops_-fno-schedule-insns_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41559 832293491 1188067780 crypto_hash/skein256256/arm gcc_-funroll-loops_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41563 753983043 1188075115 crypto_hash/skein256256/arm gcc_-funroll-loops_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41564 964261397 1188069345 crypto_hash/skein256256/arm gcc_-funroll-loops_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41498 928767522 1188063590 crypto_hash/skein256256/arm gcc_-mcpu=arm1136jf-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41552 797815103 1188069300 crypto_hash/skein256256/arm gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 790501815 1188066455 crypto_hash/skein256256/arm gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41549 815773844 1188068625 crypto_hash/skein256256/arm gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41536 821633855 1188078265 crypto_hash/skein256256/arm gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 912914792 1188072125 crypto_hash/skein256256/arm gcc_-mcpu=arm1136j-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 760992507 1188064435 crypto_hash/skein256256/arm gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 785971798 1188069690 crypto_hash/skein256256/arm gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41533 781576182 1188074695 crypto_hash/skein256256/arm gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41536 824239371 1188070645 crypto_hash/skein256256/arm gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41498 929913653 1188067120 crypto_hash/skein256256/arm gcc_-mcpu=arm810_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41500 869459333 1188069080 crypto_hash/skein256256/arm gcc_-mcpu=arm920t_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41530 813581631 1188063880 crypto_hash/skein256256/arm gcc_-mcpu=arm9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41500 937206365 1188066625 crypto_hash/skein256256/arm gcc_-mcpu=cortex-a9_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41476 752790493 1188069590 crypto_hash/skein256256/arm gcc_-mcpu=cortex-a9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41494 945174816 1188075605 crypto_hash/skein256256/arm gcc_-mcpu=cortex-a9_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 848872207 1188066395 crypto_hash/skein256256/arm gcc_-mcpu=cortex-a9_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 913476085 1188074665 crypto_hash/skein256256/arm gcc_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41552 780658803 1188066490 crypto_hash/skein256256/arm gcc_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 41514 853569179 1188064515 crypto_hash/skein256256/arm gcc_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46144 934012246 1188071825 crypto_hash/skein256256/arm_neon gcc_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46122 825691111 1188070755 crypto_hash/skein256256/arm_neon gcc_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46122 868012197 1188067840 crypto_hash/skein256256/arm_neon gcc_-fno-schedule-insns_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46162 974593704 1188075290 crypto_hash/skein256256/arm_neon gcc_-funroll-loops_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46173 853764362 1188074677 crypto_hash/skein256256/arm_neon gcc_-funroll-loops_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46163 1019231915 1188068970 crypto_hash/skein256256/arm_neon gcc_-funroll-loops_-fno-schedule-insns_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46164 878154224 1188066365 crypto_hash/skein256256/arm_neon gcc_-funroll-loops_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46166 814758928 1188069675 crypto_hash/skein256256/arm_neon gcc_-funroll-loops_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46166 977190280 1188064910 crypto_hash/skein256256/arm_neon gcc_-funroll-loops_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46100 956795103 1188073285 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136jf-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46084 813481955 1188069375 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46084 815836756 1188068340 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46122 835212955 1188070155 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46160 870850613 1188065040 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46122 943115930 1188062530 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136j-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46122 851830628 1188077985 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46106 812607572 1188073685 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46162 872304118 1188075195 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46144 953630454 1188065670 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46138 976502660 1188071495 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm810_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46160 910073459 1188069400 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm920t_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46160 836269569 1188072620 crypto_hash/skein256256/arm_neon gcc_-mcpu=arm9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46122 958631625 1188075420 crypto_hash/skein256256/arm_neon gcc_-mcpu=cortex-a9_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46106 810980031 1188058990 crypto_hash/skein256256/arm_neon gcc_-mcpu=cortex-a9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46144 977425822 1188058135 crypto_hash/skein256256/arm_neon gcc_-mcpu=cortex-a9_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46160 869455384 1188065995 crypto_hash/skein256256/arm_neon gcc_-mcpu=cortex-a9_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46182 908753996 1188065915 crypto_hash/skein256256/arm_neon gcc_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46160 872967978 1188076660 crypto_hash/skein256256/arm_neon gcc_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 46160 900611773 1188069985 crypto_hash/skein256256/arm_neon gcc_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58382 1020387352 1188066950 crypto_hash/skein256256/arm_thumb gcc_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58224 1003615001 1188066110 crypto_hash/skein256256/arm_thumb gcc_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58334 1041687784 1188068445 crypto_hash/skein256256/arm_thumb gcc_-fno-schedule-insns_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58208 1099341997 1188070445 crypto_hash/skein256256/arm_thumb gcc_-funroll-loops_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58458 1084912649 1188072410 crypto_hash/skein256256/arm_thumb gcc_-funroll-loops_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58183 1127223103 1188068155 crypto_hash/skein256256/arm_thumb gcc_-funroll-loops_-fno-schedule-insns_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58348 1036550209 1188070395 crypto_hash/skein256256/arm_thumb gcc_-funroll-loops_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58399 944256521 1188077245 crypto_hash/skein256256/arm_thumb gcc_-funroll-loops_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58229 1125061843 1188064600 crypto_hash/skein256256/arm_thumb gcc_-funroll-loops_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58172 1085135110 1188067525 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136jf-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58172 990368229 1188063100 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58156 963351454 1188060650 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58323 973646380 1188066910 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58172 1043999728 1188076505 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58158 1133274015 1188065820 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136j-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58172 965921621 1188064350 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58156 940270538 1188074210 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58346 962663915 1188063400 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58174 1038068740 1188069880 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58384 1119091765 1188065405 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm810_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58210 1055931539 1188065600 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm920t_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58308 1043195769 1188072375 crypto_hash/skein256256/arm_thumb gcc_-mcpu=arm9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58156 1127758313 1188078955 crypto_hash/skein256256/arm_thumb gcc_-mcpu=cortex-a9_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58210 939183862 1188077610 crypto_hash/skein256256/arm_thumb gcc_-mcpu=cortex-a9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58217 1155435961 1188076605 crypto_hash/skein256256/arm_thumb gcc_-mcpu=cortex-a9_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58210 987339939 1188072480 crypto_hash/skein256256/arm_thumb gcc_-mcpu=cortex-a9_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58232 1069832316 1188064530 crypto_hash/skein256256/arm_thumb gcc_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58324 1002256030 1188067875 crypto_hash/skein256256/arm_thumb gcc_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 58323 1037606188 1188068190 crypto_hash/skein256256/arm_thumb gcc_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 127246 1879103373 1188068930 crypto_hash/skein256256/opt gcc_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 127924 1774750392 1188076095 crypto_hash/skein256256/opt gcc_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 131229 1858103890 1188069355 crypto_hash/skein256256/opt gcc_-fno-schedule-insns_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 144846 2041415509 1188068370 crypto_hash/skein256256/opt gcc_-funroll-loops_-fno-schedule-insns_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 144684 1986173343 1188070560 crypto_hash/skein256256/opt gcc_-funroll-loops_-fno-schedule-insns_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 141235 2075200815 1188063915 crypto_hash/skein256256/opt gcc_-funroll-loops_-fno-schedule-insns_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 148627 2087081835 1188073530 crypto_hash/skein256256/opt gcc_-funroll-loops_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 147956 1983524446 1188068585 crypto_hash/skein256256/opt gcc_-funroll-loops_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 141287 2096572390 1188066290 crypto_hash/skein256256/opt gcc_-funroll-loops_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 120833 1784487165 1188071855 crypto_hash/skein256256/opt gcc_-mcpu=arm1136jf-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 127673 1746639422 1188072625 crypto_hash/skein256256/opt gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 121514 1696750906 1188077905 crypto_hash/skein256256/opt gcc_-mcpu=arm1136jf-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 129340 1804950788 1188073685 crypto_hash/skein256256/opt gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 99840 1465783701 1188073450 crypto_hash/skein256256/opt gcc_-mcpu=arm1136jf-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 120824 1838877793 1188069525 crypto_hash/skein256256/opt gcc_-mcpu=arm1136j-s_-O2_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 127695 1755569832 1188065500 crypto_hash/skein256256/opt gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 121488 1699592168 1188060015 crypto_hash/skein256256/opt gcc_-mcpu=arm1136j-s_-O3_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 129376 1812841180 1188063505 crypto_hash/skein256256/opt gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 99817 1505525341 1188071005 crypto_hash/skein256256/opt gcc_-mcpu=arm1136j-s_-Os_-fomit-frame-pointer_-fno-schedule-insns
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 141072 2080640806 1188067400 crypto_hash/skein256256/opt gcc_-mcpu=arm810_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 143958 1991174617 1180867011 crypto_hash/skein256256/opt gcc_-mcpu=arm920t_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 143920 1955679683 1188074710 crypto_hash/skein256256/opt gcc_-mcpu=arm9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 132803 1951367463 1188070215 crypto_hash/skein256256/opt gcc_-mcpu=cortex-a9_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 133630 1817998117 1188066345 crypto_hash/skein256256/opt gcc_-mcpu=cortex-a9_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 139893 2060506139 1188067390 crypto_hash/skein256256/opt gcc_-mcpu=cortex-a9_-O_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 139757 1921905895 1188076220 crypto_hash/skein256256/opt gcc_-mcpu=cortex-a9_-Os_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 143958 2025959402 1188070265 crypto_hash/skein256256/opt gcc_-O2_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 143866 1946727781 1188065900 crypto_hash/skein256256/opt gcc_-O3_-fomit-frame-pointer
+20130126 androidchroot armeabi 20130228 crypto_hash skein256256 try 22cb0c3039baa107b9a5e642fd9b985f54f532d1217f753ced2499bc46736ab3 ok 0 1249361714 1188068140 crypto_hash/skein256256/opt gcc_-Os_-fomit-frame-pointer
++ === Thu Feb 28 14:44:28 UTC 2013 === armeabi crypto_hash/skein256256
++ === Thu Feb 28 14:44:28 UTC 2013 === armeabi crypto_hash/skein256256/arm
++ === Thu Feb 28 14:44:28 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:44:35 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:44:42 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -fno-schedule-insns -Os -fomit-frame-pointer
++ === Thu Feb 28 14:44:47 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -funroll-loops -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:44:55 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -funroll-loops -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:45:04 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -funroll-loops -fno-schedule-insns -O -fomit-frame-pointer
++ === Thu Feb 28 14:45:10 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -funroll-loops -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:45:18 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -funroll-loops -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:45:26 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -funroll-loops -O -fomit-frame-pointer
++ === Thu Feb 28 14:45:31 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136jf-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:45:38 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:45:45 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:45:52 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:45:57 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:46:02 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136j-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:46:08 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:46:15 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:46:22 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:46:27 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:46:32 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm810 -O -fomit-frame-pointer
++ === Thu Feb 28 14:46:37 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm920t -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:46:43 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=arm9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:46:50 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=cortex-a9 -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:46:56 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=cortex-a9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:47:04 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=cortex-a9 -O -fomit-frame-pointer
++ === Thu Feb 28 14:47:09 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -mcpu=cortex-a9 -Os -fomit-frame-pointer
++ === Thu Feb 28 14:47:15 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:47:20 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:47:27 UTC 2013 === armeabi crypto_hash/skein256256/arm gcc -Os -fomit-frame-pointer
++ === Thu Feb 28 14:47:33 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon
++ === Thu Feb 28 14:47:33 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:47:37 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:47:42 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -fno-schedule-insns -Os -fomit-frame-pointer
++ === Thu Feb 28 14:47:46 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -funroll-loops -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:47:51 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -funroll-loops -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:47:57 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -funroll-loops -fno-schedule-insns -O -fomit-frame-pointer
++ === Thu Feb 28 14:48:01 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -funroll-loops -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:48:06 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -funroll-loops -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:48:12 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -funroll-loops -O -fomit-frame-pointer
++ === Thu Feb 28 14:48:17 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136jf-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:48:21 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:48:26 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:48:31 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:48:35 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:48:38 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136j-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:48:42 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:48:47 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:48:52 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:48:56 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:49:00 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm810 -O -fomit-frame-pointer
++ === Thu Feb 28 14:49:03 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm920t -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:49:08 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=arm9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:49:13 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=cortex-a9 -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:49:17 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=cortex-a9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:49:22 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=cortex-a9 -O -fomit-frame-pointer
++ === Thu Feb 28 14:49:25 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -mcpu=cortex-a9 -Os -fomit-frame-pointer
++ === Thu Feb 28 14:49:29 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:49:33 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:49:38 UTC 2013 === armeabi crypto_hash/skein256256/arm_neon gcc -Os -fomit-frame-pointer
++ === Thu Feb 28 14:49:42 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb
++ === Thu Feb 28 14:49:42 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:49:48 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:49:55 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -fno-schedule-insns -Os -fomit-frame-pointer
++ === Thu Feb 28 14:50:00 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -funroll-loops -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:50:07 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -funroll-loops -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:50:15 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -funroll-loops -fno-schedule-insns -O -fomit-frame-pointer
++ === Thu Feb 28 14:50:21 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -funroll-loops -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:50:28 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -funroll-loops -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:50:36 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -funroll-loops -O -fomit-frame-pointer
++ === Thu Feb 28 14:50:43 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136jf-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:50:51 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:50:58 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:51:05 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:51:11 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:51:16 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136j-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:51:22 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:51:29 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:51:36 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:51:41 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:51:47 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm810 -O -fomit-frame-pointer
++ === Thu Feb 28 14:51:51 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm920t -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:51:58 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=arm9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:52:05 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=cortex-a9 -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:52:11 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=cortex-a9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:52:18 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=cortex-a9 -O -fomit-frame-pointer
++ === Thu Feb 28 14:52:23 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -mcpu=cortex-a9 -Os -fomit-frame-pointer
++ === Thu Feb 28 14:52:28 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:52:35 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:52:41 UTC 2013 === armeabi crypto_hash/skein256256/arm_thumb gcc -Os -fomit-frame-pointer
++ === Thu Feb 28 14:52:47 UTC 2013 === armeabi crypto_hash/skein256256/opt
++ === Thu Feb 28 14:52:47 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:53:00 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:53:14 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -fno-schedule-insns -Os -fomit-frame-pointer
++ === Thu Feb 28 14:53:27 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -funroll-loops -fno-schedule-insns -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:53:44 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -funroll-loops -fno-schedule-insns -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:54:03 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -funroll-loops -fno-schedule-insns -O -fomit-frame-pointer
++ === Thu Feb 28 14:54:17 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -funroll-loops -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:54:36 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -funroll-loops -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:54:55 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -funroll-loops -O -fomit-frame-pointer
++ === Thu Feb 28 14:55:10 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136jf-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:55:23 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:55:38 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:55:52 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:56:05 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136jf-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:56:17 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136j-s -O2 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:56:30 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:56:45 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:57:00 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer
++ === Thu Feb 28 14:57:13 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer -fno-schedule-insns
++ === Thu Feb 28 14:57:25 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm810 -O -fomit-frame-pointer
++ === Thu Feb 28 14:57:35 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm920t -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:57:49 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=arm9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:58:04 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=cortex-a9 -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:58:18 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=cortex-a9 -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:58:33 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=cortex-a9 -O -fomit-frame-pointer
++ === Thu Feb 28 14:58:43 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -mcpu=cortex-a9 -Os -fomit-frame-pointer
++ === Thu Feb 28 14:58:56 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -O2 -fomit-frame-pointer
++ === Thu Feb 28 14:59:10 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -O3 -fomit-frame-pointer
++ === Thu Feb 28 14:59:25 UTC 2013 === armeabi crypto_hash/skein256256/opt gcc -Os -fomit-frame-pointer
++ === Thu Feb 28 14:59:39 UTC 2013 === armeabi crypto_hash/skein256256 measuring
