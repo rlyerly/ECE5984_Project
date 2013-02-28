@@ -91,7 +91,7 @@ that of blake256. This seems counter intuitive as blake256 has an additional 4 r
 due to the compiler options chosen by the script we ran to find the fastest implementation of each algorithm. The options chosen for blake256 were 
 (compiler gcc -mcpu=arm1136jf-s -O -fomit-frame-pointer -fno-schedule-insns 4.4.5) versus the options for blake32 
 (gcc -mcpu=arm9tdmi -O2 -fomit-frame-pointer 4.4.5). As we can see the architecture chosen by the script is not the target architecture and could
-lead to a numer of mis-optimizations. 
+lead to a number of mis-optimizations. 
 
 \subsection{blake64}
     \begin{figure}[H]
@@ -150,12 +150,68 @@ The graph above also shares the step like characteristics of the other graphs. E
 \subsection{keccakc768}
 \subsection{md5}
 \subsection{mgrostl256}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/mgrostl256.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
+
 \subsection{sha256}
+The sha256 and sha512 algorithms are specific implementations of the previous generation SHA-2 hash functions defined by NIST.  After effective attacks were found on SHA-1, NIST moved to implement the better SHA-2, which features several improvements (including fewer collisions and no known effective attacks).  Four variants of the algorithms were standardized based on the number of bits produced in the digest (including 256 and 512 bits for sha256 and sha512, respectively).
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/sha256.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
+
 \subsection{sha512}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/sha512.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
+
 \subsection{skein10241024}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/skein10241024.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
+
 \subsection{skein256256}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/skein256256.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
+
 \subsection{skein512256}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/skein512256.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
+
 \subsection{skein512512}
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{images/skein512512.png} 
+            \caption{Grøstl with 256-bit output}
+        \end{center}
+    \end{figure}
 
 % CONCLUSION   
 %------------
