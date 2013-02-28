@@ -59,16 +59,17 @@ The objective of the first phase of the project was to do a detailed perfomance 
 %   - a figure containg the graph of the performance
 %   - an analysis of the graph
 \section{Algorithms}
-\subsection{blake32}
+\subsection{blake}
 The BLAKE hash function is based on the ChaCha stream cipher, with an additional XOR each round. The way it works is,
 the ChaCha algorithm works with a 4 by 4 array of words. BLAKE combines an 8-word hash value with 16 words from the 
 message repeatedly, in turn truncating the ChaCha result to obtain the next hash value.The BLAKE hash function has two variants, 
 a variant with a word size of 32 bits and a variant with a word size of 64 bits. The first two hash functions we evaluate, blake32 and blake256, are 
 of the 32 bit word variety.
 
+\subsubsection{blake32}
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[scale=0.5]{images/blake32.png} 
+        \includegraphics[scale=0.5]{images_fast_run/blake32.png} 
         \caption{BLAKE with 32-bit words, 10 rounds, and 256-bit output}
     \end{center}
 \end{figure}
@@ -78,10 +79,10 @@ This characteristic is present due to the fact that during each iteration 2 word
 of the actual message is processed. This happens 8 times a round, therefore 512-bits are processed per round. So, as our hash size increases by 
 multiples of 64 bytes we will see more and more iterations having to be processed.
 
-\subsection{blake256}
+\subsubsection{blake256}
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=0.5]{images/blake256.png} 
+            \includegraphics[scale=0.5]{images_fast_run/blake256.png} 
             \caption{BLAKE with 32-bit words, 14 rounds, and 256-bit output}
         \end{center}
     \end{figure}
@@ -94,30 +95,30 @@ due to the compiler options chosen by the script we ran to find the fastest impl
 (gcc -mcpu=arm9tdmi -O2 -fomit-frame-pointer 4.4.5). As we can see the architecture chosen by the script is not the target architecture and could
 lead to a number of mis-optimizations. 
 
-\subsection{blake64}
+\subsubsection{blake64}
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=0.5]{images/blake64.png} 
+            \includegraphics[scale=0.5]{images_fast_run/blake64.png} 
             \caption{BLAKE with 64-bit words, 14 rounds, and 512-bit output }
         \end{center}
     \end{figure}
-
 The blake64 hashing function increases the word size to 64 bits. Since nothing else changes we see that the widths of each step in our 
 stepwise graph is doubled, so 1024 bits long. The cycles per byte were higher than that of the 32-bit word sizes. This is due to the 
 fact that the target processor is a 32 bit architecture and does therefore doesn't have a chance to utilize 64 bit words. 
 
-\subsection{blake512}
+\subsubsection{blake512}
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=0.5]{images/blake512.png} 
+            \includegraphics[scale=0.5]{images_fast_run/blake512.png} 
             \caption{BLAKE with 64-bit words, 16 rounds, and 512-bit output}
         \end{center}
     \end{figure}
 The difference between blake512 and blake64 is the number of rounds. This would explain the identical step width, 128 bytes, along with the increase
 in cycles for blake512. 
 
-\subsection{cubehash816}
+\subsection{cubehash}
 I won't explain the details of cubehash here. I will instead talk about how the choice of variable sizes in the cube hash equation is reflected on the graph, along with the possible influence from the architecture. If we represent the equation as CubeHashi+r/b+f–h(m). Where i is the number of initialization rounds, r is the number of rounds per message block, b is the length of the blocks taken from the message, f is the number finalization rounds, h is the number of output bits, and m is the message. We're given that r is 8 rounds per block, b is 16 bytes in a block, and h is 512 bits of output.
+\subsubsection{cubehash816}
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=0.5]{images/cubehash816.png} 
@@ -127,8 +128,10 @@ I won't explain the details of cubehash here. I will instead talk about how the 
 It is a little hard to see in the above graph, but it takes on a similar shape to the graphs found in the blake algorithms. That is, it is as step like characteristics. The length of each step is 16 bytes, 128 bits. This appears to be from the size of the blocks processed each round. Each block is 16 bytes as described above. When the message increments by a multiple of 16 we see a rise in the step. As that's one more block that needs to be processed.  
 Our target platform can provide 16, 32bit registers for the processing each block. This may be a responsible for the given speed.
 
-\subsection{groestl256}
-The groestl algorithm is another block cipher that is based from AES. This function works with l-bit blocks where l is 2n and n is the number of output bits. In this case n is 256 as denoted in the name. 
+\subsection{groestl}
+The groestl algorithm is another block cipher that is based from AES. This function works with l-bit blocks where l is 2n and n is the number of output bits. In this case n is 256 and 512 as denoted in the names. 
+
+\subsubsection{groestl256}
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=0.5]{images/grostel256.png} 
@@ -138,8 +141,7 @@ The groestl algorithm is another block cipher that is based from AES. This funct
 The graph above also shares the step like characteristics of the other graphs. Each step for this plot is 64 bytes, 512 bits in length. From what we know about groestl, it works with l-bit blocks, where we derived above l is 512 bits. We can then correlate this to the nature of the step size witnessed in the graph above.
 
 
-\subsection{groestl512}
-
+\subsubsection{groestl512}
 \subsection{JH}
 \input{p1/jh.tex}
 \subsection{Keccak}
@@ -231,6 +233,10 @@ This instance of the Skein hash function has internal state size of 1024-bits (1
 %   - any overall conclusion we can draw from the results of ALL the graphs
 %   - lessons learned
 \section*{Conclusions}
+After running the 25 algorithms over a number of implementations there were several trends. First, the algorithms are in a very optimized state and 
+GCC yields little to no improvements. When looking at all of the graphs above another trend that becomes obvious is that the scorpion architecture uses 
+32-bit registers. Lastly, there was a stepwise characteristic of each plot depending on the block size or number of blocks in each iteration. These trends
+are to be expected given our architecure and the scale of 1-1024 hash sizes.
 
 \bibliography{phase1_bib}{}
 \bibliographystyle{plain}
