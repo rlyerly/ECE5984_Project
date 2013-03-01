@@ -86,6 +86,11 @@ given that all variants of JH share a compression function.
     \end{center}
 \end{figure}
 
+The algorithm selected for benchmarking JH-384 was bitslice\_ref32 compiled with
+\texttt{gcc -mcpu=arm9 -O -fomit-frame-pointer} with GCC version 4.4.5.
+Interestingly, this is a different algorithm from the other JH versions tested.
+The selection of a $32$ bit reference implementation makes sense, given that the
+Snapdragon processor has a $32$ bit word length. 
 
 %%%
 % The JH-512 Variant.
