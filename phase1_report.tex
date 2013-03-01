@@ -116,7 +116,7 @@ cryptographic code.
         \end{center}
     \end{figure}
 
-The implementation selected to benchmark blake64 was sphlib-small compuled using
+The implementation selected to benchmark blake64 was sphlib-small compiled using
 \texttt{gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer -fno-schedule-insns} on
 GCC version 4.4.5.
 
@@ -183,7 +183,7 @@ The implementation selected for benchmarking grostel256 is the 32bit-2ktable
 implementation compiled using \texttt{gcc -mcpu=arm7tdmi -O3
 -fomit-frame-pointer} on GCC version 4.4.5. The selection of a 32 bit
 optimization makes sense given that we are targeting a 32 bit platform. A table
-based implementation implies that the memory tradeoff versus calculation was a
+based implementation implies that the memory trade off versus calculation was a
 preferable implementation decision.
 
 The graph above also shares the step like characteristics of the other graphs.
@@ -204,7 +204,7 @@ The implementation used to benchmark grostel512 was the 32bit-bytesliced-c-small
 1.0 compiled using \texttt{gcc -mcpu=strongarm110 -O -fomit-frame-pointer} on
 GCC version 4.4.5. Again, the selection of a 32 bit optimized version for a 32
 bit platform is an obvious performance enhancing decision. Further, the
-selection of byteslicing shows that that is an effective speedup mechanism
+selection of byte-slicing shows that that is an effective speedup mechanism
 compared to other grostel512 implementations.
 
 This graph shows performance severely degraded from groestl256.  First, we note that since the digest size is 512 bits, the block size is 1024 bits (or 128 bytes), which corresponds to the step size portrayed in the graph.  However there are several additional sources of overhead that make this implementation slower.  First, this version of the algorithm performs 4 additional rounds (14 rounds versus the 10 performed in groestl256).  Also, there is a difference in the round calculations.  Gr{\o}stel-256 performs operations on 8x8 matrices of bytes whereas Gr{\o}stel-512 operates on 8x16 matrices of bytes.  The added extra columns manifests themselves in an order of magnitude difference between the performance of the two algorithms.  Because the operations can no longer be broken down into clean 32-bit operations, the algorithm suffers a massive penalty.
