@@ -178,6 +178,11 @@ The output from each of these compression operations serves as input to the next
 block with a final reduction that shrinks the message to a digest size of 256
 bits. 
 
+The implementation of mgr{\o}stl that was chosen was the opt-32 implementation
+compiled with \texttt{gcc -mcpu=arm1136jf-s -O3 -fomit-frame-pointer} on GCC
+version 4.4.5. The selection of a 32 bit optimized implementation makes sense
+for targeting the 32 bit Snapdragon processor.
+
 One can see the evidence of the 1024-bit block working space by looking at the
 above graph. At each 128 byte boundary we see a jump in the number of cycles
 that are required to perform the hashing. This is because we are doing another
