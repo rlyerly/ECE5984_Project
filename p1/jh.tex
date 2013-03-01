@@ -92,6 +92,14 @@ Interestingly, this is a different algorithm from the other JH versions tested.
 The selection of a $32$ bit reference implementation makes sense, given that the
 Snapdragon processor has a $32$ bit word length. 
 
+Although it is a different implementation, this implementation exhibits many of
+the same qualities as the opt32 version. The stair step is exactly as we would
+have predicted from an understanding of the algorithm, and the growth is roughly
+on par with the other versions of JH. This would seem to imply that the
+optimizations in the opt32 version are not much of an optimization over the
+reference bit-sliced version for this board, and that bit-slicing is in and of
+itself a very effective optimization.
+
 %%%
 % The JH-512 Variant.
 %%%
