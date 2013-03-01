@@ -264,7 +264,7 @@ The sha256 and sha512 algorithms are specific implementations of the previous ge
     \end{figure}
 
 The implementation of sha256 selected for benchmarking was the sphlib
-implementation compiled using \texttt{gcc -mcpu=arm1136j-s -O2
+implementation compiled using \texttt{gcc -mcpu=arm1136j-s -O3
 -fomit-frame-pointer -fno-schedule-insns} on GCC version 4.4.5.
 
 The first algorithm, sha256, works by chopping a message into 512-bit blocks and hashing each block down to 256-bits before continuing on to the next.  The result of entire hash function is added together with the original hash value, producing the final digest.  As is evident from the graph, performance models a step function with a step size of 64 bytes.  The number of blocks needed to represent the message is $\lceil$message length$/ 64 \rceil$ (this converts the number of block into an integer multiple of 64).  As soon as the message requires a higher multiple of 64 bytes, the algorithm must process another block of data.  Therefore, for every additional 64 bytes of data, another additional 64 rounds of SHA-2 must be performed.
@@ -277,8 +277,8 @@ The first algorithm, sha256, works by chopping a message into 512-bit blocks and
         \end{center}
     \end{figure}
 
-The implementation of sha512 selected for benchmarking was the sphlib-small
-implementation compiled using \texttt{gcc -mcpu=arm1136j-s -O3
+The implementation of sha512 selected for benchmarking was the sphlib
+implementation compiled using \texttt{gcc -mcpu=arm920 -O
 -fomit-frame-pointer} on GCC version 4.4.5.
 
 The second SHA-2 algorithm benchmarked, sha512, again produces a step function; closer inspection reveals this graph has slightly different characteristics than the one produced by running sha256.  There are some fundamental changes in the underlying algorithm - first, the digest length is 512-bits and the block size is 1024 bits.  This means that for every additional 128 bytes needed to represent the message, the algorithm must process an extra block of data - hence the step size of 128 bytes.  Because this block length is longer the algorithm must perform more calculations per round, leading to a higher cycles per byte.  Additionally, sha512 performs 80 rounds versus the 64 performed by sha256, leading to another increase in cycle count.
