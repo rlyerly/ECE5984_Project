@@ -77,6 +77,10 @@ of the 32 bit word variety.
     \end{center}
 \end{figure}
 
+The implementation selected to benchmark blake32 was sphlib compiled using
+\texttt{gcc -funroll-loops -fno-schedule-insns -O2 -fomit-frame-pointer} using
+GCC version 4.4.5.
+
 From the graph above we see that there is a stepwise characteristic. The steps seem to increment every time the hash is divisible by 64. 
 This characteristic is present due to the fact that during each iteration 2 words are taken from the message at one time. So a total of 64 bits
 of the actual message is processed. This happens 8 times a round, therefore 512-bits are processed per round. So, as our hash size increases by 
@@ -90,13 +94,19 @@ multiples of 64 bytes we will see more and more iterations having to be processe
         \end{center}
     \end{figure}
 
-The graph above shows a very similar pattern to the blake32 graph. The reason is that blake256 also uses a 32 bit word size. The difference we
-see between the blake32 and this graph is the number of cycles. When analyzing the data I found that the cycles per byte for blake32 was twice
-that of blake256. This seems counter intuitive as blake256 has an additional 4 rounds to compute each iteration. I speculate that this is
-due to the compiler options chosen by the script we ran to find the fastest implementation of each algorithm. The options chosen for blake256 were 
-(compiler gcc -mcpu=arm1136jf-s -O -fomit-frame-pointer -fno-schedule-insns 4.4.5) versus the options for blake32 
-(gcc -mcpu=arm9tdmi -O2 -fomit-frame-pointer 4.4.5). As we can see the architecture chosen by the script is not the target architecture and could
-lead to a number of mis-optimizations. 
+The implementation selected to benchmark blake256 was vect128-neon 0.8 compiled
+using \texttt{gcc -mcpu=arm1136j-s -Os -fomit-frame-pointer -fno-schedule-insns}
+on GCC version 4.4.5.
+
+The graph above shows a very similar pattern to the blake32 graph. The reason is
+that blake256 also uses a 32 bit word size. The difference we see between the
+blake32 and this graph is the number of cycles. When analyzing the data I found
+that the cycles per byte for blake32 was twice that of blake256. This seems
+counter intuitive as blake256 has an additional 4 rounds to compute each
+iteration. This implies that the use of the NEON SIMD intrinsics to provide
+vectorized computation led to a substantial speedup in this case. This shows
+that properly used, the NEON instructions could be very useful in improving
+cryptographic code.
 
 \subsubsection{blake64}
     \begin{figure}[H]
@@ -105,6 +115,11 @@ lead to a number of mis-optimizations.
             \caption{BLAKE with 64-bit words, 14 rounds, and 512-bit output }
         \end{center}
     \end{figure}
+
+The implementation selected to benchmark blake64 was sphlib-small compuled using
+\texttt{gcc -mcpu=arm1136j-s -O3 -fomit-frame-pointer -fno-schedule-insns} on
+GCC version 4.4.5.
+
 The blake64 hashing function increases the word size to 64 bits. Since nothing else changes we see that the widths of each step in our 
 stepwise graph is doubled, so 1024 bits long. The cycles per byte were higher than that of the 32-bit word sizes. This is due to the 
 fact that the target processor is a 32 bit architecture and does therefore doesn't have a chance to utilize 64 bit words. 
@@ -116,6 +131,11 @@ fact that the target processor is a 32 bit architecture and does therefore doesn
             \caption{BLAKE with 64-bit words, 16 rounds, and 512-bit output}
         \end{center}
     \end{figure}
+
+The implementation selected to benchmark blake512 was the ref implementation
+compiled using \texttt{gcc -mcpu=cortex-a9 -Os -fomit-frame-pointer} on GCC
+version 4.4.5.
+
 The difference between blake512 and blake64 is the number of rounds. This would explain the identical step width, 128 bytes, along with the increase
 in cycles for blake512. 
 
