@@ -230,6 +230,11 @@ The Skein family of hash functions were submitted to the competition by a varied
         \end{center}
     \end{figure}
 
+The implementation of skein256256 chosen for benchmarking was arm\_neon
+v1.3\_ARM \_Neon\_code. The measurement function was compiled with \texttt{gcc
+-mcpu=strongarm110 -O3 -fomit-frame-pointer} using GCC version 4.4.5. This is
+optimized assembly code for the Neon intrinsics. 
+
 This instance of the Skein hash function has a block size of 256-bits (32 bytes) and produces a 256-bit digest.  In this instance, the block cipher operates on 32 byte blocks; naturally, with every higher multiple of 32 a new block must be processed, leading the to the step function represented in the graph.  Because the block size is smaller, there are fewer calculations for the block cipher, resulting in shorter runtimes in comparison to the other Skein hash functions.
 
 \subsubsection{skein512256}
@@ -240,6 +245,10 @@ This instance of the Skein hash function has a block size of 256-bits (32 bytes)
             \caption{Skein-512 with 256-bit output}
         \end{center}
     \end{figure}
+
+The implementation of skein512256 chosen for benchmarking was arm
+v1.3\_ARM \_assembly\_code and the measurement function was compiled with
+\texttt{gcc -mcpu=arm8 -O2 -fomit-frame-pointer} with GCC version 4.4.5.
 
 This instance of the Skein hash function has a block size of 512-bits (64 bytes) and produces a 256-bit digest.  Again, because the block size is 64 bytes, every higher multiple of 64 bytes creates an extra block which must be processed, similar to the previous Skein functions.  The performance of skein512256 is very comparable to the performance of skein256256.  This is because although there are twice as many operations per block in skein512256 (it must handle 64 bytes instead of 32) but there are half as many blocks to process, hence a comparable number of operations must be performed for each algorithm.  The step function is more coarse-grained than skein256256 because of the word size.
 
