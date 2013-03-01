@@ -128,6 +128,11 @@ I won't explain the details of cubehash here. I will instead talk about how the 
             \caption{CubeHash8/16 with 512-bit output}
         \end{center}
     \end{figure}
+
+The implementation selected for benchmarking was the simple implementation,
+compiled using \texttt{gcc -mcpu=arm8 -Os -fomit-frame-pointer} using GCC
+version 4.4.5.
+
 It is a little hard to see in the above graph, but it takes on a similar shape to the graphs found in the blake algorithms. That is, it is as step like characteristics. The length of each step is 16 bytes, 128 bits. This appears to be from the size of the blocks processed each round. Each block is 16 bytes as described above. When the message increments by a multiple of 16 we see a rise in the step. As that's one more block that needs to be processed.  
 Our target platform can provide 16, 32bit registers for the processing each block. This may be a responsible for the given speed.
 
@@ -141,6 +146,14 @@ The groestl algorithm is another block cipher that is based from AES. This funct
             \caption{Gr{\o}stl with 256-bit output}
         \end{center}
     \end{figure}
+
+The implementation selected for benchmarking grostel256 is the 32bit-2ktable
+implementation compiled using \texttt{gcc -mcpu=arm7tdmi -O3
+-fomit-frame-pointer} on GCC version 4.4.5. The selection of a 32 bit
+optimization makes sense given that we are targeting a 32 bit platform. A table
+based implementation implies that the memory tradeoff versus calculation was a
+preferable implementation decision.
+
 The graph above also shares the step like characteristics of the other graphs. Each step for this plot is 64 bytes, 512 bits in length. From what we know about groestl, it works with l-bit blocks, where we derived above l is 512 bits. We can then correlate this to the nature of the step size witnessed in the graph above.
 
 \subsubsection{groestl512}
@@ -150,6 +163,14 @@ The graph above also shares the step like characteristics of the other graphs. E
             \caption{Gr{\o}stl with 512-bit output}
         \end{center}
     \end{figure}
+
+The implementation used to benchmark grostel512 was the 32bit-bytesliced-c-small
+1.0 compiled using \texttt{gcc -mcpu=strongarm110 -O -fomit-frame-pointer} on
+GCC version 4.4.5. Again, the selection of a 32 bit optimized version for a 32
+bit platform is an obvious performance enhancing decision. Further, the
+selection of byteslicing shows that that is an effective speedup mechanism
+compared to other grostel512 implementations.
+
 This graph shows performance severely degraded from groestl256.  First, we note that since the digest size is 512 bits, the block size is 1024 bits (or 128 bytes), which corresponds to the step size portrayed in the graph.  However there are several additional sources of overhead that make this implementation slower.  First, this version of the algorithm performs 4 additional rounds (14 rounds versus the 10 performed in groestl256).  Also, there is a difference in the round calculations.  Gr{\o}stel-256 performs operations on 8x8 matrices of bytes whereas Gr{\o}stel-512 operates on 8x16 matrices of bytes.  The added extra columns manifests themselves in an order of magnitude difference between the performance of the two algorithms.  Because the operations can no longer be broken down into clean 32-bit operations, the algorithm suffers a massive penalty.
 
 \subsection{JH}
