@@ -222,6 +222,19 @@ This graph shows performance severely degraded from groestl256.  First, we note 
     \end{center}
 \end{figure}
 
+Message Digest Algorithm 5 was standardized in 1992 and invented by Ronald
+Rivest. The hashing scheme is described by Rivest in \cite{rivest1992md5}. We
+selected and benchmarked the ref version of the scheme which had been compiled
+using \texttt{gcc -mcpu=cortex-a9 -O3 -fomit-frame-pointer} with GCC version
+4.4.5.
+
+MD5 is designed to be very fast on 32 bit machines \cite{rivest1992md5} and we
+saw just that. MD5 works by processing 16 word blocks, and the steps in our
+graph correspond to crossing these block boundaries. We also notice a lip at the
+beginning of these steps, and suspect that it is associated with caching the
+pages on the CPU cache. We speculate that this is on all graphs, but because of
+the speed of MD5 it is more apparent on this algorithm's graph.
+
 
 \subsection{mgr{\o}stl256}
 \begin{figure}[H]
