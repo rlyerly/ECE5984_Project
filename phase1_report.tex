@@ -161,14 +161,28 @@ This graph shows performance severely degraded from groestl256.  First, we note 
 
 
 \subsection{mgr{\o}stl256}
-The modified-Gr{\o}stl (mgr{\o}stl) algorithm is a modification of the Gr{\o}stl hash algorithm chosen as one of the five finalists of the SHA-3 competition.  Similar to other hash algorithms, an arbitrary length input is padded so that it can be divided into 1024-bit blocks.  The algorithm works by performing a compression function on each block; the compression function involves additions and permutations that reduces the 1024-bit input to a 512-bit intermediate hash.  The output from each of these compression operations serves as input to the next block with a final reduction that shrinks the message to a digest size of 256 bits. 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.5]{images/mgrostl256.png} 
+        \caption{Modifided-Gr{\o}stl with 256-bit output}
+    \end{center}
+\end{figure}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.5]{images/mgrostl256.png} 
-            \caption{Modifided-Gr{\o}stl with 256-bit output}
-        \end{center}
-    \end{figure}
+The modified-Gr{\o}stl (mgr{\o}stl) algorithm is a modification of the Gr{\o}stl
+hash algorithm chosen as one of the five finalists of the SHA-3 competition.
+Similar to other hash algorithms, an arbitrary length input is padded so that it
+can be divided into 1024-bit blocks.  The algorithm works by performing a
+compression function on each block; the compression function involves additions
+and permutations that reduces the 1024-bit input to a 512-bit intermediate hash.
+The output from each of these compression operations serves as input to the next
+block with a final reduction that shrinks the message to a digest size of 256
+bits. 
+
+One can see the evidence of the 1024-bit block working space by looking at the
+above graph. At each 128 byte boundary we see a jump in the number of cycles
+that are required to perform the hashing. This is because we are doing another
+complete round of the hash function on additional data.
+
 
 \subsection{SHA-2}
 The sha256 and sha512 algorithms are specific implementations of the previous generation SHA-2 hash function defined by NIST.  After effective attacks were found on SHA-1, NIST moved to a better hash algorithm, one which features several improvements (including fewer collisions and no known effective attacks).  Four variants of the algorithms were standardized based on the number of bits produced in the digest (including 256 and 512 bits for sha256 and sha512, respectively).
