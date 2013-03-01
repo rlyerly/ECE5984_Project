@@ -246,6 +246,9 @@ This instance of the Skein hash function has a block size of 512-bits (64 bytes)
         \end{center}
     \end{figure}
 
+The implementation of skein512512 chosen for benchmarking was little, compiled
+with \texttt{gcc -mcpu=arm920t -O -fomit-frame-pointer} on GCC version 4.4.5.
+
 This instance of the Skein hash function has a block size of 512-bits (64 bytes) and produces a 512-bit digest.  Similar to the other Skein hash funcions, the step size is dictated by the block size; its length is 64 bytes because this instance of the Skein hash function works on 64 byte blocks.  This algorithm shows perfomance slower than skein512256, however - this is because of the output length of the hash.  Skein hash functions use Unique Block Iteration (UBI) chaining to produce the variable size output.  Part of this chaining involves XOR'ing message blocks together with blocks run through the Threefish cipher, and using that output as the input to the next block's chaining.  Because a skein512512 must XOR more words together when chaining the blocks (because the block size is larger), UBI chaining causes performance penalties in comparison to skein512256.
 
 \subsubsection{skein10241024}
@@ -255,6 +258,10 @@ This instance of the Skein hash function has a block size of 512-bits (64 bytes)
             \caption{Skein-1024 with 1024-bit output}
         \end{center}
     \end{figure}
+
+The implementation of skein10241024 chosen for benchmarking was opt
+v1.3\_C\_code which was compiled using \texttt{gcc -O2 -fomit-frame-pointer} on
+GCC version 4.4.5.
 
 This instance of the Skein hash function has internal state size of 1024-bits (128 bytes) and produes a 1024-bit digest.  Because the Threefish block cipher works on 128 byte blocks, the step function has a step size of 128 bytes; that is, the number of blocks that must be processed increases with every higher multiple of 128.  Following the analysis for skein512512, this algorithm must also pay a performance penalty for the UBI chaining; it must XOR more words together for each block.  Finally, this implementation has more rounds than other Skein hash functions (80 rounds instead of 72).  Therefore, this implementation has the worst performance of any of the Skein has functions on this architecture.
 
