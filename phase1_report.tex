@@ -120,7 +120,16 @@ The difference between blake512 and blake64 is the number of rounds. This would 
 in cycles for blake512. 
 
 \subsection{cubehash}
-I won't explain the details of cubehash here. I will instead talk about how the choice of variable sizes in the cube hash equation is reflected on the graph, along with the possible influence from the architecture. If we represent the equation as CubeHashi+r/b+f–h(m). Where i is the number of initialization rounds, r is the number of rounds per message block, b is the length of the blocks taken from the message, f is the number finalization rounds, h is the number of output bits, and m is the message. We're given that r is 8 rounds per block, b is 16 bytes in a block, and h is 512 bits of output.
+
+I won't explain the details of cubehash here. I will instead talk about how the
+choice of variable sizes in the cube hash equation is reflected on the graph,
+along with the possible influence from the architecture. If we represent the
+equation as CubeHashi+r/b+f–h(m). Where $i$ is the number of initialization
+rounds, $r$ is the number of rounds per message block, $b$ is the length of the
+blocks taken from the message, $f$ is the number finalization rounds, $h$ is the
+number of output bits, and $m$ is the message. We're given that $r$ is $8$ rounds per
+block, $b$ is 16 bytes in a block, and $h$ is $512$ bits of output.
+
 \subsubsection{cubehash816}
     \begin{figure}[H]
         \begin{center}
@@ -137,7 +146,10 @@ It is a little hard to see in the above graph, but it takes on a similar shape t
 Our target platform can provide 16, 32bit registers for the processing each block. This may be a responsible for the given speed.
 
 \subsection{groestl}
-The groestl algorithm is another block cipher that is based from AES. This function works with l-bit blocks where l is 2n and n is the number of output bits. In this case n is 256 and 512 as denoted in the names. 
+
+The groestl algorithm is another block cipher that is based from AES. This
+function works with $l$-bit blocks where $l$ is $2n$ and $n$ is the number of output
+bits. In this case $n$ is $256$ and $512$ as denoted in the names. 
 
 \subsubsection{groestl256}
     \begin{figure}[H]
@@ -154,7 +166,11 @@ optimization makes sense given that we are targeting a 32 bit platform. A table
 based implementation implies that the memory tradeoff versus calculation was a
 preferable implementation decision.
 
-The graph above also shares the step like characteristics of the other graphs. Each step for this plot is 64 bytes, 512 bits in length. From what we know about groestl, it works with l-bit blocks, where we derived above l is 512 bits. We can then correlate this to the nature of the step size witnessed in the graph above.
+The graph above also shares the step like characteristics of the other graphs.
+Each step for this plot is $64$ bytes, $512$ bits in length. From what we know
+about groestl, it works with $l$-bit blocks, where we derived above $l$ is $512$
+bits. We can then correlate this to the nature of the step size witnessed in the
+graph above.
 
 \subsubsection{groestl512}
     \begin{figure}[H]
