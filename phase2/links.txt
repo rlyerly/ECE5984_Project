@@ -36,3 +36,14 @@ Hardware Volatile Entropy Gathering and Expansion (HAVEGE)
 http://www.irisa.fr/caps/projects/hipsor/
 
 Uses the internal state of the OS to generate a high level of entropy.
+
+--- ---- ---- ----
+
+RFC 1750: Randomness Recommendations for Security
+
+http://www.rfc-editor.org/rfc/pdfrfc/rfc1750.txt.pdf
+
+(R)equest (F)or (C)omments 1750, which details potential sources of entropy.
+The Linux random drivers (in the kernel source, in drivers/char/random.c)
+specifically mention this document as a basis for the implementation of
+/dev/random and /dev/urandom.
