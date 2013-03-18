@@ -1,0 +1,38 @@
+This text file contains several links to pages that might be helpful.
+
+---- ---- ---- ----
+
+Linux From Scratch: Entropy and random number generators in Linux
+
+http://www.linuxfromscratch.org/hints/downloads/files/entropy.txt
+
+Details several applications and libraries that can add entropy and can use the
+existing entropy more efficiently.  Also contains a good overview of entropy
+and which types of applications should use which types of entropy.
+
+---- ---- ---- ----
+
+Kernel Mailing List: Appropriate sources of entropy
+
+http://lwn.net/Articles/283103/
+
+Describes a little bit about /dev/random and /dev/urandom, in addition to
+discussing some of the sources of entropy used to populate these devices.
+
+---- ---- ---- ----
+
+Entropy Broker
+
+http://www.vanheusden.com/entropybroker/
+
+A utility to add entropy to the Linux entropy tool by sampling compatible audio
+and video devices.  Uses a client/server architecture, making it ideal for
+distributing random values to real or virtual devices.
+
+---- ---- ---- ----
+
+Hardware Volatile Entropy Gathering and Expansion (HAVEGE)
+
+http://www.irisa.fr/caps/projects/hipsor/
+
+Uses the internal state of the OS to generate a high level of entropy.
