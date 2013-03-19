@@ -47,3 +47,28 @@ http://www.rfc-editor.org/rfc/pdfrfc/rfc1750.txt.pdf
 The Linux random drivers (in the kernel source, in drivers/char/random.c)
 specifically mention this document as a basis for the implementation of
 /dev/random and /dev/urandom.
+
+--- ---- ---- ----
+
+Stack Overflow: What is a Good Sources of Entropy are Available on a Smart Phone?
+
+http://stackoverflow.com/questions/4504654/what-good-source-of-entropy-are-available-on-a-smart-phone
+
+Top comment describes how hashing an image from the camera (even a pitch black image) is the best method. Apparently CCDs are excellent sources for entropy.
+
+--- ---- ---- ----
+
+Hack-a-Day: Is Entropy Slowing Down Your Android Device?
+
+http://hackaday.com/2013/01/04/is-entropy-slowing-down-your-android-device/
+
+I mainly put htis here for the LOLs. Serously, how popular is this technique and why does it exist?!
+
+--- ---- ---- ----
+
+The Sources of Randomness in Mobile Devices
+
+http://www.fi.muni.cz/usr/matyas/RNG_nordsec07_cameraReady.pdf
+
+Identifies and analyzes various sources of TRNG on mobile platforms. Hopefully we can pick this apart and find some unique to our platform. Or possibly twist it to a more practical applied method.
+
