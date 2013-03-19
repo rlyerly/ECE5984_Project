@@ -76,3 +76,11 @@ Identifies and analyzes various sources of TRNG on mobile platforms. Hopefully
 we can pick this apart and find some unique to our platform. Or possibly twist 
 it to a more practical/applied method.
 
+--- ---- ---- ----
+
+Accelerometers and Randomness: Perfect Together
+
+https://www.cs.columbia.edu/~jvoris/papers/wisec_11.pdf
+
+If we choose the accelerometer as a source, this may be useful. 
+
