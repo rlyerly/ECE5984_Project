@@ -96,3 +96,13 @@ accelerometer & gyroscope.  They try to introduce a technique whereby the user
 performs gestures (like drawing shapes, letters, etc.) to create a password.
 However, they have tough time obtaining reproducibility, pointing to
 unpredictability in the gyroscope and accelerometer.
+
+---- ---- ---- ----
+
+Random number generation on handheld devices for cryptographic applications
+
+http://scholarsarchive.library.oregonstate.edu/xmlui/bitstream/handle/1957/32946/MontvilleAdamW2004.pdf?sequence=1
+
+Masters thesis evaluating microphone and touchscreen as randomness sources.  Work done on PocketPC in 2003 though.
+
+---- ---- ---- ----
