@@ -76,7 +76,7 @@ Identifies and analyzes various sources of TRNG on mobile platforms. Hopefully
 we can pick this apart and find some unique to our platform. Or possibly twist 
 it to a more practical/applied method.
 
---- ---- ---- ----
+---- ---- ---- ----
 
 Accelerometers and Randomness: Perfect Together
 
@@ -84,3 +84,15 @@ https://www.cs.columbia.edu/~jvoris/papers/wisec_11.pdf
 
 If we choose the accelerometer as a source, this may be useful. 
 
+---- ---- ---- ----
+
+Wavesigning: An Encryption Technique to Protect Data in Mobile Phones Using
+Accelerometer and Gyroscope
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&ved=0CDUQFjAA&url=http%3A%2F%2Fmedia.wix.com%2Fugd%2F6f49ac_497e8cb35e4eb506e20aaeecc7e58178.pdf%3Fdn%3DMalware-report_final.pdf&ei=ScVJUYSYKMXh4AOQ6ICAAQ&usg=AFQjCNFWZKVB4GiFlLVOrv1JJpYm5cWpdw&sig2=ZKwF5VTzG_5PNYNMMomCaA&bvm=bv.44011176,d.dmg
+
+An awful paper, but maybe can be used as proof of the unpredictability of the
+accelerometer & gyroscope.  They try to introduce a technique whereby the user
+performs gestures (like drawing shapes, letters, etc.) to create a password.
+However, they have tough time obtaining reproducibility, pointing to
+unpredictability in the gyroscope and accelerometer.
