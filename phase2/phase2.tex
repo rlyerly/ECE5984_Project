@@ -127,7 +127,7 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
   % \graphicspath{{../pdf/}{../jpeg/}}
   % and their extensions so you won't have to specify these with
@@ -467,6 +467,18 @@ I wish you the best of success.
 
 \section{Proposed Solution}
 
+\begin{figure}[t]
+	\includegraphics[width=\columnwidth]{proposed_solution}
+	\caption{Block diagram of the proposed solution.  Our daemon will poll from the accelerometer and gyroscope (when requested), perform post-processing and feed random bits into the Linux entropy pool via system calls.}
+	\label{proposed_solution_block}
+\end{figure}
+
+Mobile phones have become diverse systems-on-a-chip, incorporating many types of devices onto one platform.  Devices such as touchscreens, cameras, microphones, battery levels, etc. have been investigated as additional sources of entropy on these systems, as they have become ubiquitous.  However, a serious drawback of many of these devices is the potential for strong bias; for example, a microphone can be biased by a loud tone that overwhelms the sensor and causes it to generate the same saturated values for subsequent samplings. Being able to strongly influence these devices is a serious cryptographic concern - as such, it is important to find a device or devices that can produce high-quality random numbers at fast bitrate.
+
+As discussed in \cite{accelerometers_and_randomness}, accelerometers are a good candidate for this role.  Because of the highly sensitive nature of accelerometers, they are resistant to a variety of potential sources of bias.  J. Voris et. al. provide a detailed discussion of this resistance, showing that most attempts to produce bias actually increase the randomness of the device.  They show that even at its lowest entropic level (when the accelerometer is at rest on industrial dampening material), it still produces high-quality randomness.  Additionally, gyroscopes are another potential source of entropy as they are designed to achieve the same level of sensitivity.  Thus, both of these devices are attractice ways to add high quality randomness into the entropy pool.
+
+We propose implementation and analysis of a daemon that, when awoken, reads from the accelerometer and the gyroscope, performs post-processing to increase the quality of the data and adds the data to the entropy pool.  We will analyze the daemon in regards to power consumption, quality of the random numbers generated, and speedup of random number generation.  Figure \ref{proposed_solution_block} shows the overall architecture for our daemon.  It will perform device polling and post-processing to produce data, then will use system calls to add entropy into the Linux entropy pool.  Finally, various synthetic and real-world benchmarks will be used to analyze the speed of random number generation, quality of generated numbers, and power draw from using the daemon.
+
 \subsection{Figure}
 
 \subsection{Motivation}
@@ -559,7 +571,6 @@ I wish you the best of success.
 % exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
 % footnotes above bottom floats. This can be corrected via the \fnbelowfloat
 % command of the stfloats package.
-
 
 
 
