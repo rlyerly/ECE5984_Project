@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.8.10)  21 MAR 2013 18:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.8.10)  21 MAR 2013 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,8 +451,8 @@ Package pdftex.def Info: proposed_solution.png used on input line 505.
 File: proj-ghantt-v3.png Graphic file (type png)
 
 <use proj-ghantt-v3.png>
-Package pdftex.def Info: proj-ghantt-v3.png used on input line 8.
-(pdftex.def)             Requested size: 253.04987pt x 100.69968pt.
+Package pdftex.def Info: proj-ghantt-v3.png used on input line 9.
+(pdftex.def)             Requested size: 523.81061pt x 208.45523pt.
 ) (./risks_and_unknowns.tex [2 <./proposed_solution.png>]) (./phase2.bbl)
 
 ** Conference Paper **
@@ -473,14 +473,14 @@ Here is how much of TeX's memory you used:
  5769 multiletter control sequences out of 15000+200000
  34143 words of font info for 63 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
- 37i,6n,23p,1227b,209s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,6n,23p,1227b,210s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-dist/fonts/enc/dvi
 ps/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on phase2.pdf (3 pages, 113962 bytes).
+Output written on phase2.pdf (3 pages, 113970 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream

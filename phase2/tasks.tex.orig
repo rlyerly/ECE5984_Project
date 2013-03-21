@@ -5,8 +5,11 @@ The work for the proposed solution will be broken down into three phases.  The f
 All of the tasks are laid out on the Ghantt chart shown
 
 \begin{figure*}[t]
-    \centering
-    \includegraphics[scale=0.71]{proj-ghantt-v3}
-    \caption{Assigned tasks and estimated time of completion}
-    \label{Ghantt Chart}
+<<<<<<< HEAD
+	\includegraphics[]{proj-ghantt-v3}
+=======
+	\includegraphics[width=\textwidth]{proj-ghantt-v3}
+>>>>>>> a102400b4a5dbe741398dc51c21c43b22fac4d97
+	\caption{Assigned tasks and estimated time of completion}
+	\label{Ghantt Chart}
 \end{figure*}
