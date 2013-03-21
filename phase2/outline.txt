@@ -1,0 +1,39 @@
+Project Proposal
+|- Introduction and Problem Statement
+|- Background
+|  |- Sources of Entropy
+|  |  |- Stock Dragonboard (/dev/random & /dev/hw-random)
+|  |  |  |- Benchmark (DIEHARD, NIST)
+|  |  |  |- strace
+|  |  |  
+|  |  |- Possible Sources
+|  |     |- Touchscreen
+|  |     |- Microphone
+|  |     |- Cameras
+|  |     |- Power Supply
+|  |     |- Radio Receivers
+|  |     |- Accelerometer, Gyroscope, and Compass
+|  |
+|  |- Methods for Measuring Entropy and RNG Performance
+|  
+|- Proposed Solution
+|  |- Seeding /dev/random with Accelerometer and Gyroscope 
+|  |  |- Daemon for Sampling Devices
+|  |  |- ???
+|  |  
+|  |- Post Processing Methods
+|  |  |- Hashing
+|  |  |- ???
+|  |
+|  |- Testing and Analysis 
+|     |- Physical Testing of Accelerometer and Gyroscope
+|     |- Measurements for Entropy and RNG Performance
+|     |- Comparison of Stock /dev/random to Solution
+|     |- Possible Cryptographic Attacks on Solution
+|  
+|- Planned Work
+|  |- Tasks and Assignments
+|  |- Timeline
+|  |- Unknowns and Risks
+|  
+|- References
