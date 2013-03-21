@@ -477,6 +477,17 @@ find correlations between randomness generated from the music recording, but sta
 gave no mention to the power draw of each method. It was also mentioned that manufacturers of both microphones cameras are continuously trying to decrease the noise
 via both hardware and proprietary (hidden) software. The tests mentioned in \cite{Krhovjak} were performed in 2007 on dated hardware.
 
+%Accelerometers and Randomness: Perfect Together
+Accelerometers have been studied as a potential source of entropy in low-power and embedded devices.  J. Voris et. al. analyzed the use of accelerometers in an
+Intel WISP RFID tag \cite{voris}.  They conclude that even when stationary, accelerometers are sensitive enough to provide a good rate of entropy; they even
+test the device when at rest on industrial dampening material.  They show that accelerometers are highly resistant to bias, arguing that the best attack
+vector to reduce randomness is to leave the accelerometer stationary (i.e. movement only serves to increase the randomness rather than degrade it).  While it is
+conceivable that an attacker may be able to saturate the device's output by applying an extraordinary force (say, in a centrifuge), an accelerometer lacks the
+potential for bias that plagues other devices on the phone.  Although gyroscopes have not been studied as a means for random number generation, they are a
+similar device in principal to the accelerometer, striving to achieve a high level of sensitivity.  In addition, these two devices have become ubiquitous on
+modern phones and are extremely cheap to include in any system.  Because of the low potential for bias and the widespread use of these devices, they are an
+attractive means for adding entropy to a random number generator.
+
 \section{Proposed Solution}
 
 \begin{figure}[t]
