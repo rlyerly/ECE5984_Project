@@ -21,3 +21,10 @@ show if the sensor data appears to have good entropy or not.  In the case that
 it does not, it would invalidate the remaining work for the project. 
 
 
+A potential problem is the existence of the hardware random number generator
+that is already on the board. Depending on how good that hardware is, it could
+potentially dwarf any results that this project generates. Even so, the results
+should be valuable, both as a look at the prospect of using accelerometers in
+future designs for hardware random number generators as well as for providing
+better entropy to existing platforms which do not have hardware random number
+generators. 
