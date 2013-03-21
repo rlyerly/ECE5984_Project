@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.8.10)  21 MAR 2013 18:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.8.10)  21 MAR 2013 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,9 +433,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 471.
+(Font)              <7> on input line 469.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 471.
+(Font)              <5> on input line 469.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -444,9 +444,16 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: proposed_solution.png Graphic file (type png)
 
 <use proposed_solution.png>
-Package pdftex.def Info: proposed_solution.png used on input line 507.
+Package pdftex.def Info: proposed_solution.png used on input line 505.
 (pdftex.def)             Requested size: 253.04987pt x 105.2674pt.
- (./phase2.bbl)
+ (./tasks.tex
+<proj-ghantt-v3.png, id=14, 737.75626pt x 293.59688pt>
+File: proj-ghantt-v3.png Graphic file (type png)
+
+<use proj-ghantt-v3.png>
+Package pdftex.def Info: proj-ghantt-v3.png used on input line 8.
+(pdftex.def)             Requested size: 253.04987pt x 100.69968pt.
+) (./risks_and_unknowns.tex [2 <./proposed_solution.png>]) (./phase2.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -458,25 +465,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2 <./proposed_solution.png>] (./phase2.aux) ) 
+[3 <./proj-ghantt-v3.png>] (./phase2.aux) ) 
 Here is how much of TeX's memory you used:
- 2470 strings out of 493488
- 37188 string characters out of 3146892
- 104055 words of memory out of 3000000
- 5760 multiletter control sequences out of 15000+200000
+ 2486 strings out of 493488
+ 37447 string characters out of 3146892
+ 104072 words of memory out of 3000000
+ 5769 multiletter control sequences out of 15000+200000
  34143 words of font info for 63 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
- 37i,6n,23p,906b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-dist/fonts/enc/
-dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/
-urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
-/usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on phase2.pdf (2 pages, 90917 bytes).
+ 37i,6n,23p,1227b,209s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
+r/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on phase2.pdf (3 pages, 113962 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

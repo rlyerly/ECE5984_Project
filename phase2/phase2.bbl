@@ -1,5 +1,21 @@
 \begin{thebibliography}{1}
 
+\bibitem{independent_devices}
+Boaz Barak, Russell Impagliazzo, and Avi Wigderson.
+\newblock Extracting randomness using few independent sources.
+\newblock {\em SIAM Journal on Computing}, 36(4):1095--1118, 2006.
+
+\bibitem{true_rng}
+Boaz Barak, Ronen Shaltiel, and Eran Tromer.
+\newblock True random number generators secure in a changing environment.
+\newblock {\em Cryptographic Hardware and Embedded Systems-CHES 2003}, pages
+  166--180, 2003.
+
+\bibitem{keccak}
+Guido Bertoni, Joan Daemen, Micha{\"e}l Peeters, and Gilles Van~Assche.
+\newblock Keccak specifications.
+\newblock {\em Submission to NIST (Round 2)}, 2009.
+
 \bibitem{chip_and_skim}
 Mike Bond, Omar Choudary, Steven~J Murdoch, Sergei Skorobogatov, and Ross
   Anderson.
