@@ -419,8 +419,13 @@ Email: pkobezak@vt.edu}
 
 \begin{abstract}
 %\boldmath
-The abstract goes here.
+    With the mobile platform becoming more ubiquitous in modern society there is a greater need for the ability to run cryptographic algorithms on 
+    low power architectures. Most of these algorithms require a source of randomness. For the Android version of the Linux kernel this is provided
+    by user input and timing data. It have been observed that this methodology does not provide the user with enough randomness and has caused either
+    system performance issues or none-unique cryptographic keys. Therefore there is a high demand for a quick and power efficient random number
+    generator for mobile devices.
 \end{abstract}
+
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
 % if the conference you are submitting to favors bold math in the abstract,
@@ -429,9 +434,6 @@ The abstract goes here.
 % math in the abstract anyway.
 
 % no keywords
-
-
-
 
 % For peer review papers, you can put extra information on the cover
 % page as needed:
@@ -446,11 +448,8 @@ The abstract goes here.
 
 
 \section{Introduction}
-\cite{Krhovjak}
 
 \subsection{Background}
-
-\subsection{Problem Statement}
 
 \subsection{Related Work}
 
@@ -470,12 +469,25 @@ The task of finding true randomness on mobile platforms has been targeted before
 camera and microphone. The authors of this paper were unable to generate definite numbers for random number generation but were able to verify the validity.
 There were several advantages and disadvantages presented in this paper in regards to the camera as a random number generator. The advantages included the
 ability to produce considerable entropy even at 5C and with the camera guard closed. However there were also some vulnerabilities, an attacker could
-use a halogen light bulb to over saturate the CCD to produce only 255 values for R,G, and B. This would highly influence the randomness given by the phone. 
+use a halogen light bulb to over saturate the CCD to produce only 255 values for R, G, and B. This would highly influence the randomness given by the phone. 
 The microphone's noise as a source of randomness was found to be 3 bits of entropy per sample given my the Shannon entropy formula and 0.5 using the min-entropy 
 formula. The only attempt to skew the data was using two sets of recordings one having music played into it and one with ambient background noises. They did
 find correlations between randomness generated from the music recording, but stated that this could be corrected with the proper post-processing. The authors
 gave no mention to the power draw of each method. It was also mentioned that manufacturers of both microphones cameras are continuously trying to decrease the noise
 via both hardware and proprietary (hidden) software. The tests mentioned in \cite{Krhovjak} were performed in 2007 on dated hardware.
+
+\subsection{Problem Statement}
+Due to the increasing number of mobile platforms and their use of cryptographic algorithms and random number generators, there is demand for quick 
+and power efficient random number generators in the mobile environment. Specifically on our target hardware, Qualcomm's APQ8060 Dragonboard, we have 
+access to the random and urandom devices given via the Linux kernel. The random device is the true random number generation option in the Linux 
+environment, it is therefore a safe baseline for comparison as it is fairly consistent between Android devices. There are issues with this current solution.
+Firstly, a performance decrease can be witnessed when the entropy pool, used by random, is depleted to 128 bits. This is may be more prevalent in Android's
+Event Loop software model, as there isn't a clear multi-tasking structure. Another flaw comes to the scene when programmers and users try to circumvent
+this performance drain, by either filling the entropy pool with a none random bit-stream or by using the urandom device where the random device is more secure.
+We witness the effects of these issues in sources like \cite{ron_was_wrong}, which found that 4\% of 6.6 million certificates and PGP keys use the same RSA 
+modulus and therefore possibly have the exact same private key as someone else. The authors of \cite{chip_and_skim}, exposed poor random number generators
+in EMV machines. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
+Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
 
 \section{Proposed Solution}
 
