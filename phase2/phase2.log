@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.8.10)  21 MAR 2013 17:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2012.8.10)  21 MAR 2013 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -432,28 +432,21 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-
-LaTeX Warning: Citation `ron_was_wrong' on page 1 undefined on input line 487.
-
-
-LaTeX Warning: Citation `chip_and_skim' on page 1 undefined on input line 488.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 471.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 471.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<proposed_solution.png, id=10, 752.8125pt x 313.17pt>
+<proposed_solution.png, id=12, 752.8125pt x 313.17pt>
 File: proposed_solution.png Graphic file (type png)
 
 <use proposed_solution.png>
-Package pdftex.def Info: proposed_solution.png used on input line 495.
+Package pdftex.def Info: proposed_solution.png used on input line 507.
 (pdftex.def)             Requested size: 253.04987pt x 105.2674pt.
-
-
-LaTeX Warning: Citation `accelerometers_and_randomness' on page 2 undefined on 
-input line 502.
-
-(./phase2.bbl)
+ (./phase2.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -465,30 +458,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2 <./proposed_solution.png>] (./phase2.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[2 <./proposed_solution.png>] (./phase2.aux) ) 
 Here is how much of TeX's memory you used:
- 2465 strings out of 493488
- 37160 string characters out of 3146892
- 101040 words of memory out of 3000000
- 5755 multiletter control sequences out of 15000+200000
- 34114 words of font info for 63 fonts, out of 3000000 for 9000
+ 2470 strings out of 493488
+ 37188 string characters out of 3146892
+ 104055 words of memory out of 3000000
+ 5760 multiletter control sequences out of 15000+200000
+ 34143 words of font info for 63 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
- 37i,6n,23p,824b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
-ts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb
-i8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on phase2.pdf (2 pages, 69789 bytes).
+ 37i,6n,23p,906b,205s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-dist/fonts/enc/
+dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/
+texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/
+urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
+/usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on phase2.pdf (2 pages, 90917 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

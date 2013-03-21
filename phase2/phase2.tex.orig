@@ -468,7 +468,7 @@ application has been downloaded over ten thousand times in the past 30 days, it 
 The task of finding true randomness on mobile platforms has been targeted before. In \cite{Krhovjak}, the two main sources analyzed in this paper were the 
 camera and microphone. The authors of this paper were unable to generate definite numbers for random number generation but were able to verify the validity.
 There were several advantages and disadvantages presented in this paper in regards to the camera as a random number generator. The advantages included the
-ability to produce considerable entropy even at $5\,^{\circ}\mathrm{C}$ and with the camera guard closed. However there were also some vulnerabilities, an attacker could
+ability to produce considerable entropy even at 5C and with the camera guard closed. However there were also some vulnerabilities, an attacker could
 use a halogen light bulb to over saturate the CCD to produce only 255 values for R, G, and B. This would highly influence the randomness given by the phone. 
 The microphone's noise as a source of randomness was found to be 3 bits of entropy per sample given my the Shannon entropy formula and 0.5 using the min-entropy 
 formula. The only attempt to skew the data was using two sets of recordings one having music played into it and one with ambient background noises. They did
@@ -476,17 +476,7 @@ find correlations between randomness generated from the music recording, but sta
 gave no mention to the power draw of each method. It was also mentioned that manufacturers of both microphones cameras are continuously trying to decrease the noise
 via both hardware and proprietary (hidden) software. The tests mentioned in \cite{Krhovjak} were performed in 2007 on dated hardware.
 
-%Accelerometers and Randomness: Perfect Together
-Accelerometers have been studied as a potential source of entropy in low-power and embedded devices.  J. Voris et. al. analyzed the use of accelerometers in an
-Intel WISP RFID tag \cite{voris}.  They conclude that even when stationary, accelerometers are sensitive enough to provide a good rate of entropy; they even
-test the device when at rest on industrial dampening material.  They show that accelerometers are highly resistant to bias, arguing that the best attack
-vector to reduce randomness is to leave the accelerometer stationary (i.e. movement only serves to increase the randomness rather than degrade it).  While it is
-conceivable that an attacker may be able to saturate the device's output by applying an extraordinary force (say, in a centrifuge), an accelerometer lacks the
-potential for bias that plagues other devices on the phone.  Although gyroscopes have not been studied as a means for random number generation, they are a
-similar device in principal to the accelerometer, striving to achieve a high level of sensitivity.  In addition, these two devices have become ubiquitous on
-modern phones and are extremely cheap to include in any system.  Because of the low potential for bias and the widespread use of these devices, they are an
-attractive means for adding entropy to a random number generator.
-
+<<<<<<< HEAD
 \subsection{Problem Statement}
 Due to the increasing number of mobile platforms and their use of cryptographic algorithms and random number generators, there is demand for quick 
 and power efficient random number generators in the mobile environment. Specifically on our target hardware, Qualcomm's APQ8060 Dragonboard, we have 
@@ -499,7 +489,18 @@ We witness the effects of these issues in sources like \cite{ron_was_wrong}, whi
 modulus and therefore possibly have the exact same private key as someone else. The authors of \cite{chip_and_skim}, exposed poor random number generators
 in EMV machines. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
 Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
-
+=======
+%Accelerometers and Randomness: Perfect Together
+Accelerometers have been studied as a potential source of entropy in low-power and embedded devices.  J. Voris et. al. analyzed the use of accelerometers in an
+Intel WISP RFID tag \cite{voris}.  They conclude that even when stationary, accelerometers are sensitive enough to provide a good rate of entropy; they even
+test the device when at rest on industrial dampening material.  They show that accelerometers are highly resistant to bias, arguing that the best attack
+vector to reduce randomness is to leave the accelerometer stationary (i.e. movement only serves to increase the randomness rather than degrade it).  While it is
+conceivable that an attacker may be able to saturate the device's output by applying an extraordinary force (say, in a centrifuge), an accelerometer lacks the
+potential for bias that plagues other devices on the phone.  Although gyroscopes have not been studied as a means for random number generation, they are a
+similar device in principal to the accelerometer, striving to achieve a high level of sensitivity.  In addition, these two devices have become ubiquitous on
+modern phones and are extremely cheap to include in any system.  Because of the low potential for bias and the widespread use of these devices, they are an
+attractive means for adding entropy to a random number generator.
+>>>>>>> b93f31099ec6ec2e67dd9eff287fd34815783d31
 
 \section{Proposed Solution}
 
@@ -619,10 +620,10 @@ The conclusion goes here.
 
 
 % use section* for acknowledgement
-%\section*{Acknowledgment}
+\section*{Acknowledgment}
 
 
-%The authors would like to thank...
+The authors would like to thank...
 
 % trigger a \newpage just before the given reference
 % number - used to balance the columns on the last page

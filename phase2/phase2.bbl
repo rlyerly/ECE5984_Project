@@ -1,8 +1,38 @@
 \begin{thebibliography}{1}
 
+\bibitem{chip_and_skim}
+Mike Bond, Omar Choudary, Steven~J Murdoch, Sergei Skorobogatov, and Ross
+  Anderson.
+\newblock Chip and skim: cloning emv cards with the pre-play attack.
+\newblock {\em arXiv preprint arXiv:1209.2531}, 2012.
+
 \bibitem{Krhovjak}
-Jan Krhovjak and Petr Svenda.
+Jan Krhovj{\'a}k, V~Matyas, and P~Svenda.
 \newblock The sources of randomness in mobile devices.
-\newblock 2007.
+\newblock {\em In Proceeding of NORDSEC}, pages 73--84, 2007.
+
+\bibitem{ron_was_wrong}
+Arjen~K Lenstra, James~P Hughes, Maxime Augier, Joppe~W Bos, Thorsten
+  Kleinjung, and Christophe Wachter.
+\newblock Ron was wrong, whit is right.
+\newblock {\em IACR eprint archive}, 64, 2012.
+
+\bibitem{diehard}
+George Marsaglia.
+\newblock Diehard: a battery of tests of randomness.
+\newblock {\em See http://stat. fsu. edu/~ geo/diehard. html}, 1996.
+
+\bibitem{nist}
+A~Rukhin, J~Soto, J~Nechvatal, M~Smid, E~Barker, S~Leigh, M~Levenson, M~Vangel,
+  D~Banks, A~Heckert, et~al.
+\newblock Nist special publication 800-22.
+\newblock {\em A statistical test suite for random and pseudorandom number
+  generators for cryptographic applications}, 2001.
+
+\bibitem{voris}
+Jonathan Voris, Nitesh Saxena, and Tzipora Halevi.
+\newblock Accelerometers and randomness: perfect together.
+\newblock In {\em Proceedings of the fourth ACM conference on Wireless network
+  security (New York, NY, USA, 2011), WiSec}, volume~11, pages 115--126, 2011.
 
 \end{thebibliography}

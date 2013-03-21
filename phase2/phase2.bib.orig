@@ -1,0 +1,48 @@
+@article{Krhovjak,
+  title={The sources of randomness in mobile devices},
+  author={Krhovj{\'a}k, Jan and Matyas, V and Svenda, P},
+  journal={In Proceeding of NORDSEC},
+  pages={73--84},
+  year={2007}
+}
+
+<<<<<<< HEAD
+@article{ron_was_wrong,
+  title={Ron was wrong, Whit is right},
+  author={Lenstra, Arjen K and Hughes, James P and Augier, Maxime and Bos, Joppe W and Kleinjung, Thorsten and Wachter, Christophe},
+  journal={IACR eprint archive},
+  volume={64},
+  year={2012}
+}
+
+@article{chip_and_skim,
+  title={Chip and Skim: cloning EMV cards with the pre-play attack},
+  author={Bond, Mike and Choudary, Omar and Murdoch, Steven J and Skorobogatov, Sergei and Anderson, Ross},
+  journal={arXiv preprint arXiv:1209.2531},
+  year={2012}
+}
+
+=======
+@inproceedings{voris,
+  title={Accelerometers and randomness: perfect together},
+  author={Voris, Jonathan and Saxena, Nitesh and Halevi, Tzipora},
+  booktitle={Proceedings of the fourth ACM conference on Wireless network security (New York, NY, USA, 2011), WiSec},
+  volume={11},
+  pages={115--126},
+  year={2011}
+}
+
+@article{nist,
+  title={NIST special publication 800-22},
+  author={Rukhin, A and Soto, J and Nechvatal, J and Smid, M and Barker, E and Leigh, S and Levenson, M and Vangel, M and Banks, D and Heckert, A and others},
+  journal={A statistical test suite for random and pseudorandom number generators for cryptographic applications},
+  year={2001}
+}
+
+@article{diehard,
+  title={DIEHARD: a battery of tests of randomness},
+  author={Marsaglia, George},
+  journal={See http://stat. fsu. edu/~ geo/diehard. html},
+  year={1996}
+}
+>>>>>>> b93f31099ec6ec2e67dd9eff287fd34815783d31
