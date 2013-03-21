@@ -1,0 +1,35 @@
+%% Risks and Unknowns
+
+% Talk about:
+%  - Is the accelerometer really entropic?
+%  - Will this be worthwhile vs. the hw-rng?
+%  - Is this data being incorporated somehow already?
+%  - Unknown whether post processing is ``good''.
+
+For any project, it is important to understand that there are risks and unknowns
+that will need to be understood and mitigated during the course of the project.
+By assessing what may become a problem during the process of the project, those
+problems can be consciously avoided or dealt with early on.
+
+One unknown that is central to this project is the entropy of the accelerometer.
+Based on the findings in \cite{voris}, it appears that accelerometers are good
+sources of entropy, it is possible that the accelerometer on the Dragonboard
+violates some assumption or that technology has changed such that modern
+accelerometers are no longer good sources of entropy. This can be tested using
+several randomness tests, such as DIEHARD and the NIST entropy tests, which will
+be essential to do before moving on with any sort of analysis.  These tests will
+show if the sensor data appears to have good entropy or not.  In the case that
+it does not, it would invalidate the remaining work for the project. 
+
+A potential problem is the existence of the hardware random number generator
+that is already on the board. Depending on how good that hardware is, it could
+potentially dwarf any results that this project generates. Even so, the results
+should be valuable, both as a look at the prospect of using accelerometers in
+future designs for hardware random number generators as well as for providing
+better entropy to existing platforms which do not have hardware random number
+generators. 
+
+If the data from these sensors is already being incorporated into the entropy
+pool, it would make this work largely a repetition of that previous work. Upon
+first inspection this does not appear to be the case, though further research is
+needed to ensure that this is indeed novel work.
