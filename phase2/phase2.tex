@@ -476,6 +476,17 @@ find correlations between randomness generated from the music recording, but sta
 gave no mention to the power draw of each method. It was also mentioned that manufacturers of both microphones cameras are continuously trying to decrease the noise
 via both hardware and proprietary (hidden) software. The tests mentioned in \cite{Krhovjak} were performed in 2007 on dated hardware.
 
+%Accelerometers and Randomness: Perfect Together
+Accelerometers have been studied as a potential source of entropy in low-power and embedded devices.  J. Voris et. al. analyzed the use of accelerometers in an
+Intel WISP RFID tag \cite{voris}.  They conclude that even when stationary, accelerometers are sensitive enough to provide a good rate of entropy; they even
+test the device when at rest on industrial dampening material.  They show that accelerometers are highly resistant to bias, arguing that the best attack
+vector to reduce randomness is to leave the accelerometer stationary (i.e. movement only serves to increase the randomness rather than degrade it).  While it is
+conceivable that an attacker may be able to saturate the device's output by applying an extraordinary force (say, in a centrifuge), an accelerometer lacks the
+potential for bias that plagues other devices on the phone.  Although gyroscopes have not been studied as a means for random number generation, they are a
+similar device in principal to the accelerometer, striving to achieve a high level of sensitivity.  In addition, these two devices have become ubiquitous on
+modern phones and are extremely cheap to include in any system.  Because of the low potential for bias and the widespread use of these devices, they are an
+attractive means for adding entropy to a random number generator.
+
 \subsection{Problem Statement}
 Due to the increasing number of mobile platforms and their use of cryptographic algorithms and random number generators, there is demand for quick 
 and power efficient random number generators in the mobile environment. Specifically on our target hardware, Qualcomm's APQ8060 Dragonboard, we have 
@@ -489,6 +500,7 @@ modulus and therefore possibly have the exact same private key as someone else. 
 in EMV machines. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
 Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
 
+
 \section{Proposed Solution}
 
 \begin{figure}[t]
@@ -497,12 +509,11 @@ Therefore there is a clear need for a low power solution that is applicable to e
 	\label{proposed_solution_block}
 \end{figure}
 
-Mobile phones have become diverse systems-on-a-chip, incorporating many types of devices onto one platform.  Devices such as touchscreens, cameras, microphones, battery levels, etc. have been investigated as additional sources of entropy on these systems, as they have become ubiquitous.  However, a serious drawback of many of these devices is the potential for strong bias; for example, a microphone can be biased by a loud tone that overwhelms the sensor and causes it to generate the same saturated values for subsequent samplings. Being able to strongly influence these devices is a serious cryptographic concern - as such, it is important to find a device or devices that can produce high-quality random numbers at fast bitrate.
+Mobile phones have become diverse systems-on-a-chip, incorporating many types of devices onto one platform.  Devices such as touch screens, cameras, microphones, battery levels, etc. have been investigated as additional sources of entropy on these systems, as they have become ubiquitous.  However, a serious drawback of many of these devices is the potential for strong bias; for example, a microphone can be biased by a loud tone that overwhelms the sensor and causes it to generate the same saturated values for subsequent samplings. Being able to strongly influence these devices is a serious cryptographic concern - as such, it is important to find a device or devices that can produce high-quality random numbers at fast bitrate.
 
-As discussed in \cite{accelerometers_and_randomness}, accelerometers are a good candidate for this role.  Because of the highly sensitive nature of accelerometers, they are resistant to a variety of potential sources of bias.  J. Voris et. al. provide a detailed discussion of this resistance, showing that most attempts to produce bias actually increase the randomness of the device.  They show that even at its lowest entropic level (when the accelerometer is at rest on industrial dampening material), it still produces high-quality randomness.  Additionally, gyroscopes are another potential source of entropy as they are designed to achieve the same level of sensitivity.  Thus, both of these devices are attractice ways to add high quality randomness into the entropy pool.
+As discussed in \cite{voris}, accelerometers are a good candidate for this role.  Because of the highly sensitive nature of accelerometers, they are resistant to a variety of potential sources of bias.  J. Voris et al. provide a detailed discussion of this resistance, showing that most attempts to produce bias actually increase the randomness of the device.  They show that even at its lowest entropic level (when the accelerometer is at rest on industrial dampening material), it still produces high-quality randomness.  Additionally, gyroscopes are another potential source of entropy as they are designed to achieve the same level of sensitivity.  Thus, both of these devices are attractive ways to add high quality randomness into the entropy pool.
 
-We propose implementation and analysis of a daemon that, when awoken, reads from the accelerometer and the gyroscope, performs post-processing to increase the quality of the data and adds the data to the entropy pool.  We will analyze the daemon in regards to power consumption, quality of the random numbers generated, and speedup of random number generation.  Figure \ref{proposed_solution_block} shows the overall architecture for our daemon.  It will perform device polling and post-processing to produce data, then will use system calls to add entropy into the Linux entropy pool.  Finally, various synthetic and real-world benchmarks will be used to analyze the speed of random number generation, quality of generated numbers, and power draw from using the daemon.
-
+Figure \ref{proposed_solution_block} shows the overall architecture for our daemon.  We propose implementation and analysis of a daemon that, when awoken, reads from the accelerometer and the gyroscope, performs post-processing (with several different techniques) to increase the quality of the data and adds the data to the entropy pool.  Part of this solution involves investigating several types of post-processing and comparing their effectiveness versus using raw data from the sensors.  We will analyze the daemon in regards to quality of the random numbers generated (DIEHARD \cite{diehard} and NIST \cite{nist} benchmarks) in addition to the power consumption and speedup of random number generation (synthetic benchmarks).  This will also be compared to the stock random number generator in Linux, which utilizes an on-board hardware random number generator.
 \subsection{Figure}
 
 \subsection{Motivation}
