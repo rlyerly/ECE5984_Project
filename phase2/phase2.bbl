@@ -4,7 +4,7 @@
 {\em Kionix Tri-axis Digital Accelerometer Specifications}, 7 2010.
 
 \bibitem{random_man}
-{\em Random, urandom - kernel random number source devices}, 3 2013.
+{\em Random, urandom - kernel random number source devices}, March 2013.
 \newblock Retrieved from
   http://www.kernel.org/doc/man-pages/online/pages/man4/random.4.html.
 
@@ -29,6 +29,11 @@ Mike Bond, Omar Choudary, Steven~J Murdoch, Sergei Skorobogatov, and Ross
   Anderson.
 \newblock Chip and skim: cloning emv cards with the pre-play attack.
 \newblock {\em arXiv preprint arXiv:1209.2531}, 2012.
+
+\bibitem{kanter}
+Ido Kanter, Yaara Aviad, Igor Reidler, Elad Cohen, and Michael Rosenbluh.
+\newblock An optical ultrafast random bit generator.
+\newblock {\em Nature Photonics}, 4(1):58--61, 2009.
 
 \bibitem{Krhovjak}
 Jan Krhovj{\'a}k, V~Matyas, and P~Svenda.

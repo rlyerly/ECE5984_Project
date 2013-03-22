@@ -3,48 +3,58 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: phase2.aux
 The style file: plain.bst
 Database file #1: phase2.bib
+I was expecting a `,' or a `}'---line 97 of file phase2.bib
+ :   
+ :   @article{montville2003random,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 101 of file phase2.bib
+ : 
+ : >>>>>>> b566abf65d7bed3da36bcb566a0e4c08d68a8334
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--to sort, need author, organization, or key in random_man
 Warning--to sort, need author, organization, or key in Kionix
 Warning--empty journal in montville2003random
-You've used 12 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            561 strings with 5929 characters,
-and the built_in function-call counts, 3988 in all, are:
-= -- 378
-> -- 230
+            567 strings with 6106 characters,
+and the built_in function-call counts, 4398 in all, are:
+= -- 417
+> -- 258
 < -- 4
-+ -- 93
-- -- 80
-* -- 281
-:= -- 673
-add.period$ -- 33
-call.type$ -- 12
-change.case$ -- 73
++ -- 105
+- -- 90
+* -- 318
+:= -- 744
+add.period$ -- 36
+call.type$ -- 13
+change.case$ -- 81
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 148
-empty$ -- 272
-format.name$ -- 80
-if$ -- 817
+cite$ -- 16
+duplicate$ -- 159
+empty$ -- 297
+format.name$ -- 90
+if$ -- 896
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 10
-newline$ -- 60
-num.names$ -- 20
-pop$ -- 74
+int.to.str$ -- 13
+missing$ -- 11
+newline$ -- 65
+num.names$ -- 22
+pop$ -- 80
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 70
 quote$ -- 0
-skip$ -- 120
+skip$ -- 127
 stack$ -- 0
-substring$ -- 180
-swap$ -- 38
+substring$ -- 205
+swap$ -- 39
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 52
 warning$ -- 3
-while$ -- 31
-width$ -- 14
-write$ -- 121
-(There were 3 warnings)
+while$ -- 35
+width$ -- 15
+write$ -- 132
+(There were 2 error messages)
