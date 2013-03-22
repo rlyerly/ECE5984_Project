@@ -1,15 +1,18 @@
 % Deliverables
 
-The deliverables of this project will include a detailed report, the 
-daemon source, post processing source, and any scripts used in 
-development.  Additionally, the results will be presented, summarizing 
-the findings in the report.  
+At the culmination of this project, the deliverables will include a detailed
+report, the daemon source, post processing source, and any scripts used in
+development. The report will include an analysis comparing the results with the
+stock solution in terms of entropy, speed, and power. The results will be
+presented, summarizing the findings of the report. 
 
-The results of this work should show that the potential exists to use 
-common peripherals on mobile devices to help fill the entropy pool of 
-the RNG.  This will be beneficial to devlopers who want to ensure a 
-consistent stream of high-quality random numbers.  Even thought the 
-end-user of these devices may not be aware of the RNG, they will notice 
-slow downs in encrypted application sessions.  The proposed solution 
-should reduce the chances of end-users experiencing slow downs when 
-concurrent encrypted sessions require random numbers quickly.
+This work will show that the potential exists to use common peripherals on
+mobile devices to supply random bits to fill the entropy pool to feed the RNG.
+This will be beneficial to developers who need to ensure a consistent stream of
+cryptographically high-quality random numbers. The end-user may not typically be
+aware of the presence of the RNG on their system, they do notice slow downs as a
+result of encryption application sessions waiting for adequate entropy to be
+secure. The proposed solution will allow device and application developers to
+provide those applications with constant streams of high entropy bits preventing
+these stalls from ever occurring, even on low end hardware that would not have a
+hardware random number generator included.
