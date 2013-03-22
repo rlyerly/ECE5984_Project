@@ -3,16 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: phase2.aux
 The style file: plain.bst
 Database file #1: phase2.bib
-I was expecting a `,' or a `}'---line 97 of file phase2.bib
- :   
- :   @article{montville2003random,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 101 of file phase2.bib
- : 
- : >>>>>>> b566abf65d7bed3da36bcb566a0e4c08d68a8334
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--to sort, need author, organization, or key in random_man
 Warning--to sort, need author, organization, or key in Kionix
 Warning--empty journal in montville2003random
@@ -57,4 +47,4 @@ warning$ -- 3
 while$ -- 35
 width$ -- 15
 write$ -- 132
-(There were 2 error messages)
+(There were 3 warnings)
