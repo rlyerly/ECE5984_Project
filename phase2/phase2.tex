@@ -475,7 +475,7 @@ gave no mention to the power draw of each method. It was also mentioned that man
 via both hardware and proprietary (hidden) software. The tests mentioned in \cite{Krhovjak} were performed in 2007 on dated hardware.
 
 %Accelerometers and Randomness: Perfect Together
-Accelerometers have been studied as a potential source of entropy in low-power and embedded devices.  J. Voris et. al. analyzed the use of accelerometers in an
+Accelerometers have been studied as a potential source of entropy in low-power and embedded devices.  J. Voris et al. analyzed the use of accelerometers in an
 Intel WISP RFID tag \cite{voris}.  They conclude that even when stationary, accelerometers are sensitive enough to provide a good rate of entropy; they even
 test the device when at rest on industrial dampening material.  They show that accelerometers are highly resistant to bias, arguing that the best attack
 vector to reduce randomness is to leave the accelerometer stationary (i.e. movement only serves to increase the randomness rather than degrade it).  While it is
@@ -518,8 +518,8 @@ our daemon.  Android built on Linux exposes standard interfaces to the hardware 
 to feed random data into the entropy pool.  Our daemon will interact with both of these interfaces.
 
 There are many types of post processing that can be implemented to increase the uniformity of the random numbers generated.  Hash algorithms like SHA-3
-\cite{keccak} can be used to eliminate bias.  Similarly, Barak et. al. propose a technique whereby random numbers are pulled from several independent
-devices \cite{independent_devices}.  Two of these numbers are multiplied together and added to a third number to strengthen the randomness.  Barak et.
+\cite{keccak} can be used to eliminate bias.  Similarly, Barak et al. propose a technique whereby random numbers are pulled from several independent
+devices \cite{independent_devices}.  Two of these numbers are multiplied together and added to a third number to strengthen the randomness.  Barak et
 al. propose another technique where random numbers are multiplied by a Toeplitz matrix to approach a uniform distribution \cite{true_rng}.  These
 techniques will be implemented and compared for their effectiveness and computational complexity.
 
