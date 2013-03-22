@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: phase2.aux
 The style file: plain.bst
 Database file #1: phase2.bib
-You've used 9 entries,
+Warning--to sort, need author, organization, or key in Kionix
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            549 strings with 5600 characters,
-and the built_in function-call counts, 3492 in all, are:
-= -- 331
-> -- 221
+            554 strings with 5669 characters,
+and the built_in function-call counts, 3635 in all, are:
+= -- 344
+> -- 222
 < -- 4
-+ -- 88
++ -- 89
 - -- 78
-* -- 253
-:= -- 599
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 65
+* -- 263
+:= -- 617
+add.period$ -- 28
+call.type$ -- 10
+change.case$ -- 67
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 122
-empty$ -- 217
+cite$ -- 11
+duplicate$ -- 130
+empty$ -- 236
 format.name$ -- 78
-if$ -- 709
+if$ -- 742
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 10
 missing$ -- 9
-newline$ -- 48
+newline$ -- 51
 num.names$ -- 18
-pop$ -- 63
+pop$ -- 66
 preamble$ -- 1
-purify$ -- 56
+purify$ -- 58
 quote$ -- 0
-skip$ -- 100
+skip$ -- 106
 stack$ -- 0
-substring$ -- 165
-swap$ -- 36
+substring$ -- 170
+swap$ -- 37
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
-warning$ -- 0
+type$ -- 40
+warning$ -- 1
 while$ -- 29
-width$ -- 10
-write$ -- 98
+width$ -- 12
+write$ -- 104
+(There was 1 warning)
