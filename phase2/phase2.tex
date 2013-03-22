@@ -496,8 +496,8 @@ Firstly, a performance decrease can be witnessed when the entropy pool, used by 
 Event Loop software model, as there isn't a clear multi-tasking structure. Another flaw comes to the scene when programmers and users try to circumvent
 this performance drain, by either filling the entropy pool with a none random bit-stream or by using the urandom device where the random device is more secure.
 We witness the effects of these issues in sources like \cite{ron_was_wrong}, which found that 4\% of 6.6 million certificates and PGP keys use the same RSA 
-modulus and therefore possibly have the exact same private key as someone else. The authors of \cite{chip_and_skim}, exposed poor random number generators
-in EMV machines. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
+modulus and therefore possibly have the exact same private key as someone else. The authors of \cite{chip_and_skim} exposed poor random number generators
+in EMV machines, used in chip and pin payments. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
 Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
 
 
