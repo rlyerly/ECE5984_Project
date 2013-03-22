@@ -4,9 +4,9 @@ Efficient generation of random numbers, with high entropy, is essential for
 mobile devices, however power must always be used carefully as to not drain the
 battery too quickly. Any peripheral device, such as an accelerometer, will use
 more power when it is collecting data. The APQ8060 Dragonboard uses a Kionix
-KXSD9-1026 accelerometer which draws typically 0.3 $\mu$ Amps at 2.6 Volts while
+KXSD9-1026 accelerometer which draws typically 0.3 $\mu$Amps at 2.6 Volts while
 in standby \cite{Kionix}. However, full operating power draws more than 200
-$\mu$ Amps. Running the accelerometer for any length of time, at a high sampling
+$\mu$Amps. Running the accelerometer for any length of time, at a high sampling
 rate, may draw more power than other sources of entropy. As a result, the
 implemented daemon will be able to sense when the entropy pool is full and pause
 its collection until it senses that the pool has been depleted. This should
