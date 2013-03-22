@@ -449,16 +449,25 @@ Email: pkobezak@vt.edu}
 
 
 \section{Introduction}
-
+At the core of the majority cryptography operations, there exists a need for true random numbers. 
+True random number generators (TRNG) can be costly to produce. The fastest known TRNG was produced
+in 2010 at Bar-Ilan University \cite{kanter}, claimed to generate at a rate of $300 Gbit s^{-1}$. This method makes
+use of a high derivative of the digitized chaotic laser intensity. However this paper targets a low power
+devices with limited access to such highly noisy devices. We aim to present a practical approach of
+a TRNG in a power friendly method. There are many existing TRNG implementations both in software and hardware. The target platform of this paper,
+and all Android based devices, depends on the randomness provided by the Linux kernel.
 
 \subsection{Related Work and Background}
 
 %Seeder
-The Linux kernel, used by the Android system, has an entropy pool to provide randomness. This pool is populated via environmental noise from device drivers and other 
+The Linux kernel, used by the Android system, has an entropy pool to provide
+randomness. This pool is populated via environmental noise from device drivers,
+timing differences between interrupts, and other various
 sources. These sources are treated as true random number generation and therefore create entropy suitable for key generation and other
 cryptography. Access to this pool is granted through the random device located at /dev/random \cite{random_man} and through the urandom device, 
 located at /dev/urandom. These two interfaces read straight from the pool until a limit of 128 bits of remaining entropy is reached. If the pool is drained to below this bit limit, and if the application reading from the pool is using the random interface, then it will block until more entropy is added to the pool. The urandom interface provides ``unlimited'' entropy by rehashing existing entropy in the pool. The urandom device does not block, but forgoes true randomness and uses and feeds psuedo random data to the application. It is stated that this method is theoretically vulnerable to cryptographic attacks. 
 
+%Seeder
 In the Google Play Store there exists an application entitled Seeder. The developers of seeder are trying to speed up the Android experience by removing
 the need to ever block on the random device. Their solution to provide entropy even when the random device's 128 bit limit is reached by to piping the 
 false entropy from the urandom device back into the entropy pool. The developers of Seeder claim this brings the user noticeable speedups in day to 
@@ -546,10 +555,13 @@ draw and computational complexity of the random number generators.
 \end{figure*}
 
 \subsection{Expectations}
+<<<<<<< HEAD
 Our expectations are to successfully produce a bit stream generated using the accelerometer and gyroscope to meet the requirements tested in NIST and DIEHARD.
 Most notably we would like to achieve a good distribution of random numbers that are suitable for adding to the Linux kernel's entropy pool. We also expect
 to achieve a fast enough rate to run only when the entropy is at critical levels, thus saving power.
 
+=======
+>>>>>>> 59bd9b5de1b26f7abf8cd44d567439367513f311
 \input{expectations}
 
 \section{Plan for Development}
