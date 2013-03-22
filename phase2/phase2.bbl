@@ -3,6 +3,11 @@
 \bibitem{Kionix}
 {\em Kionix Tri-axis Digital Accelerometer Specifications}, 7 2010.
 
+\bibitem{random_man}
+{\em Random, urandom - kernel random number source devices}, 3 2013.
+\newblock Retrieved from
+  http://www.kernel.org/doc/man-pages/online/pages/man4/random.4.html.
+
 \bibitem{independent_devices}
 Boaz Barak, Russell Impagliazzo, and Avi Wigderson.
 \newblock Extracting randomness using few independent sources.
@@ -40,6 +45,12 @@ Arjen~K Lenstra, James~P Hughes, Maxime Augier, Joppe~W Bos, Thorsten
 George Marsaglia.
 \newblock Diehard: a battery of tests of randomness.
 \newblock {\em See http://stat. fsu. edu/~ geo/diehard. html}, 1996.
+
+\bibitem{montville2003random}
+Adam~W Montville.
+\newblock Random number generation on handheld devices for cryptographic
+  applications.
+\newblock 2003.
 
 \bibitem{nist}
 A~Rukhin, J~Soto, J~Nechvatal, M~Smid, E~Barker, S~Leigh, M~Levenson, M~Vangel,
