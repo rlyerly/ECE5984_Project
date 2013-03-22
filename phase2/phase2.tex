@@ -449,25 +449,27 @@ Email: pkobezak@vt.edu}
 
 \section{Introduction}
 
+
 \subsection{Related Work and Background}
 
 %Seeder
-In the Linux kernel, including the Android kernel, there is an entropy pool. Access to this pool is done through the random device located in /dev/random. 
-If the pool is drained to below 128 bits, then the application reading from the pool will spin until more entropy is added to the pool. There also exists
-a urandom device which provides ``unlimited'' entropy. This device uses the same approach as the random device until the 128 bit barrier. At which point 
-the urandom device does not block, but forgoes true randomness and is therefore vulnerable to cryptographic attacks.
+In the Linux kernel, including the Android kernel, there is an entropy pool. This pool is populated via environmental noise from device drivers and other 
+sources into an entropy pool. These sources are treated as true random number generation and therefore create entropy suitable for key generation and other
+cryphotgraphy. Access to this pool is granted through the random device located in /dev/random \cite{random_man} and through the urandom device, 
+located in /dev/urandom. These two interfaces read straight from the pool until a limit of 128 bits of remaining entropy is reached. If the pool is drained to below this bit limit, and if the application reading from the pool is using the random interface, then it will spin until more entropy is added to the pool. If the application is using the urandom interface, which provides ``unlimited'' entropy. The urandom device does not block, but forgoes true randomness and uses and feeds psuedo random data into the entropy pool. It is stated that this method is theoretically vulnerable to cryptographic attacks. 
 
-In the Google Play Store there exists and application entitled Seeder. The developers of seeder are trying to speed up the Android experience by removing
-the need to spin on the random device. Their solution is when the random device's 128 bit limit is reached to pipe the false entropy from the urandom device
-back into the entropy pool. The developers of Seeder claim this brings the user noticeable speedups in day to day use of the Android Operating System. As this
-application has been downloaded over ten thousand times in the past 30 days, it is clear that this is an area of interest to the Android user community.
+In the Google Play Store there exists an application entitled Seeder. The developers of seeder are trying to speed up the Android experience by removing
+the need to ever spin on the random device. Their solution to provide entropy even when the random device's 128 bit limit is reached by to piping the 
+false entropy from the urandom device back into the entropy pool. The developers of Seeder claim this brings the user noticeable speedups in day to 
+day use of the Android Operating System. As this application has been downloaded over ten thousand times in the past 30 days (as of the date this paper was written)
+, it is clear that this is an area of interest to the Android user community.
 
 %The Sources of Randomness in Mobile Devices
-The task of finding true randomness on mobile platforms has been targeted before. In \cite{Krhovjak}, the two main sources analyzed in this paper were the 
-camera and microphone. The authors of this paper were unable to generate definite numbers for random number generation but were able to verify the validity.
+The task of finding true randomness on mobile platforms has been targeted before. In \cite{Krhovjak}, the two main sources analyzed were the 
+camera and microphone. The authors of this paper were unable to generate definite rates for random number generation but were able to verify the validity.
 There were several advantages and disadvantages presented in this paper in regards to the camera as a random number generator. The advantages included the
-ability to produce considerable entropy even at $5\,^{\circ}\mathrm{C}$ and with the camera guard closed. However there were also some vulnerabilities, an attacker could
-use a halogen light bulb to over saturate the CCD to produce only 255 values for R, G, and B. This would highly influence the randomness given by the phone. 
+ability to produce considerable entropy even at $5\,^{\circ}\mathrm{C}$ and when the camera guard was closed. However there were also some vulnerabilities, 
+an attacker could use a halogen light bulb to saturate the CCD to produce only 255 values for R, G, and B values of each pixel. This would highly bias the randomness produced by the camera. 
 The microphone's noise as a source of randomness was found to be 3 bits of entropy per sample given my the Shannon entropy formula and 0.5 using the min-entropy 
 formula. The only attempt to skew the data was using two sets of recordings one having music played into it and one with ambient background noises. They did
 find correlations between randomness generated from the music recording, but stated that this could be corrected with the proper post-processing. The authors
@@ -500,7 +502,6 @@ Therefore there is a clear need for a low power solution that is applicable to e
 
 
 \section{Proposed Solution}
-
 \begin{figure}[t]
 	\includegraphics[width=\columnwidth]{proposed_solution}
 	\caption{Block diagram of the proposed solution.  Our daemon will poll from the accelerometer and gyroscope (when requested), perform post-processing and feed random bits into the Linux entropy pool via system calls.}
@@ -533,6 +534,10 @@ draw and computational complexity of the random number generators.
 \input{task-power}
 
 \subsection{Expectations}
+Our expectations are to successfully produce a bit stream generated using the accelerometer and gyroscope to meet the requirements tested in NIST and DIEHARD.
+Most notably we would like to achieve a normal distribution of random numbers that are suitable for adding to the Linux kernel's entropy pool. We also expect
+to achieve a fast enough rate to run only when the entropy is at critical levels, thus saving power.
+
 \input{expectations}
 
 \section{Plan for Development}
