@@ -2,11 +2,9 @@
 #include <string.h>
 #include "post_processing.h"
 
-#define DEBUG 0
-
 #define ERR( message ) fprintf(stderr, "Error: message!\n")
 
-int process(pp_data* data)
+int post_process(pp_data* data)
 {
 	//Preliminary checks, make sure the user didn't do anything stupid...
 	if(data->input_size > 128)

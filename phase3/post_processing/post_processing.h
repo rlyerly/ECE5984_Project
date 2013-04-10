@@ -39,13 +39,13 @@
  *		matrix multiplication of the Toeplitz matrix (i.e. diagonal
  *		matrix) and the input data (in column form).
  */
-enum {
+enum pp_type {
 	NONE,
 	VON_NEUMANN,
 	SHA3,
 	MULTI_SAMPLE,
 	TOEPLITZ
-} pp_type;
+};
 
 /*
  * 
@@ -79,4 +79,4 @@ typedef struct _pp_data {
  *	Success (0) if the data was successfully post-processed, or failure (1)
  *	otherwise.
  */
-int process(pp_data* data);
+int post_process(pp_data* data);
