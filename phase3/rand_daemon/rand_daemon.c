@@ -24,8 +24,8 @@ add_entropy(const char *buf, int len)
 	/* Determine how much entropy this actually represents */
 	int e_cnt = len << 3; /*?*/
 	
-    /* Build the request */
-    struct rand_pool_info *rpi = alloca((2 * sizeof(int)) + len);
+	/* Build the request */
+	struct rand_pool_info *rpi = alloca((2 * sizeof(int)) + len);
 	rpi->entropy_count = e_cnt;
 	rpi->buf_size = len;
 	memcpy(rpi->buf, buf, len);
