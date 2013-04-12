@@ -22,7 +22,8 @@ add_entropy(const char *buf, int len)
 	}
 
 	/* Determine how much entropy this actually represents */
-	int e_cnt = len << 3; /*?*/
+	int e_cnt = len * 8; /* For now assume that every bit is good, 
+	                        this is probably a bad assumption however */
 	
 	/* Build the request */
 	struct rand_pool_info *rpi = alloca(sizeof(struct rand_pool_info) + len);
