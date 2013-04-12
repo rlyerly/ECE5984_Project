@@ -25,7 +25,7 @@ add_entropy(const char *buf, int len)
 	int e_cnt = len << 3; /*?*/
 	
 	/* Build the request */
-	struct rand_pool_info *rpi = alloca((2 * sizeof(int)) + len);
+	struct rand_pool_info *rpi = alloca(sizeof(struct rand_pool_info) + len);
 	rpi->entropy_count = e_cnt;
 	rpi->buf_size = len;
 	memcpy(rpi->buf, buf, len);
