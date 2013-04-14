@@ -6,8 +6,10 @@
  *
  * Author: Rob Lyerly <rlyerly@vt.edu>
  */
-#define SUCCESS 0
-#define FAILURE 1
+#include <stdint.h>
+#include <math.h>
+
+#define BITS2BYTES( bits ) (int)ceil(((double)bits)/8.0)
 
 /*
  * Enumerates the possible types of post-processing available to the user.
@@ -16,13 +18,6 @@
  *		library if you're not dispersing the data.  In this case,
  *		input data is copied directly into the output buffer and the
  *		input size is returned.
- *
- * VON_NEUMANN:	Apply von-Neumann whitening.  This is a stream-processing
- *		approach where two consecutive bits are analyzed.  If they are
- *		the same, they are thrown out.  If the first bit is 0 and the
- *		second bit is 1, then a 1 is output.  If the first bit is 1
- *		and the second bit is 0, then a 0 is output.  In this way, you
- *		can get up to 4 bits of randomness per byte.
  *
  * SHA3:	Apply the SHA-3 algorithm.  This is a well known standard and
  *		has good statistical random number properties.  The number of
@@ -41,35 +36,37 @@
  */
 enum pp_type {
 	NONE,
-	VON_NEUMANN,
 	SHA3,
 	MULTI_SAMPLE,
 	TOEPLITZ
 };
 
 /*
- * 
+ * Struct encapsulating all necessary information for performing
+ * post-processing.  Users of the library must initialize this struct with the
+ * specified type of post-processing and input data.  Once the "post_process"
+ * function has been applied to this struct, it will contain the output data.
  */
 typedef struct _pp_data {
 	//Type of post-processing
 	enum pp_type type;
 
-	//Input size + data
-	unsigned int input_size; //TODO do we need to set this to a fixed size?
+	//Input size (# of bits) + data
+	unsigned long input_size; //TODO do we need to set this to a fixed size?
 	union idata {
-		char* sample;
-		char* samples[3];
+		uint8_t* sample;
+		uint8_t* samples[3];
 	} input_data;
 
-	//Output size + data
+	//Output size (# of bits) + data
 	unsigned int output_size;
-	char* output_data;
+	uint8_t* output_data;
 } pp_data;
 
 /*
  * Apply post-processing to the supplied data.  The calling function must set
  * the type of post-processing and the input data on which to apply it.  On
- * return, the output data will be filled with dispersed data.
+ * return, the struct will contain a pointer to the processed data.
  *
  * Arguments:
  *	data:	Data struct (defined above) which specifies the type of
