@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PollSensors</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="fast">Fast</string>
+    <string name="help_text">Select the sampling speed of the gyroscope/accelerometer:</string>
+    <string name="slow">Slow</string>
+    <string name="medium">Medium</string>
+    <string name="fastest">Fastest</string>
+    <string name="number_of_samples">Number samples of taken:</string>
+    <string name="zero">0</string>
+
+</resources>
