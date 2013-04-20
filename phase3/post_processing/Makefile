@@ -1,6 +1,8 @@
 LIB=libpp.a
 TEST=pp_test
 
+BUILD=build/
+
 CC=/home/rlyerly/Projects/Android/gcc-arm/bin/arm-none-linux-gnueabi-gcc
 CFLAGS=-O3 -Wall
 DEBUG=-g
@@ -20,28 +22,29 @@ SHA3_SRC=$(shell ls sha3/src/*.c)
 SHA3_ASM=$(shell ls sha3/src/*.s)
 
 # Object files
-DRIVER_OBJ=$(addprefix build/,$(DRIVER_SRC:.c=.o))
-PP_OBJ=$(addprefix build/, $(subst src/,,$(PP_SRC:.c=.o)))
-SHA3_OBJ=$(addprefix build/, $(subst sha3/src/,,$(SHA3_SRC:.c=.o)))
-SHA3_OBJ+=$(addprefix build/, $(subst sha3/src/,,$(SHA3_ASM:.s=.o)))
+DRIVER_OBJ=$(addprefix $(BUILD),$(DRIVER_SRC:.c=.o))
+PP_OBJ=$(addprefix $(BUILD), $(subst src/,,$(PP_SRC:.c=.o)))
+SHA3_OBJ=$(addprefix $(BUILD), $(subst sha3/src/,,$(SHA3_SRC:.c=.o)))
+SHA3_OBJ+=$(addprefix $(BUILD), $(subst sha3/src/,,$(SHA3_ASM:.s=.o)))
 
 LIB_OBJ=$(PP_OBJ) $(SHA3_OBJ)
 
 # Recipes for compiling sources TODO cleanup
-build/%.o: %.c
+$(BUILD)%.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
-build/%.o: src/%.c
+$(BUILD)%.o: src/%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
-build/%.o: sha3/src/%.c
+$(BUILD)%.o: sha3/src/%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $<
 
-build/%.o: sha3/src/%.s
+$(BUILD)%.o: sha3/src/%.s
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 # Recipe to build the library (static)
 lib: $(LIB_OBJ)
+	mkdir $(BUILD)
 	$(AR) $(LIBFLAGS) $(LIB_OBJ)
 
 # Recipe for library test
@@ -53,4 +56,4 @@ all: lib test
 clean:
 	rm -f $(LIB)
 	rm -f $(TEST)
-	rm -f build/*.o
+	rm -f $(BUILD)*.o
