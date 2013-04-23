@@ -33,7 +33,7 @@ os.environ['OUTPUT'] = filename.replace('.dat', '_z.png').replace('data', 'graph
 os.environ['TITLE'] = "Distribution of 0's and 1's for file\n" + filename.replace('data/', '').replace('.dat', '_processed_z.dat')
 subprocess.Popen(['./scripts/plot.p']).wait()
 
-#Cleanup
+# Cleanup
 os.remove(filename.replace('.dat', '_binary_x.dat'))
 os.remove(filename.replace('.dat', '_binary_y.dat'))
 os.remove(filename.replace('.dat', '_binary_z.dat'))
