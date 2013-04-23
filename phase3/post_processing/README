@@ -1,0 +1,11 @@
+Post-processing library
+
+Author: Rob Lyerly <rlyerly@vt.edu>
+
+
+
+Notes:
+All Galois-field arithmetic (i.e. arithmetic in GF(2^n)) is performed using the
+fast Galois-Field arithmetic library written by James S. Plank, available at:
+
+http://web.eecs.utk.edu/~plank/plank/papers/CS-07-593/
