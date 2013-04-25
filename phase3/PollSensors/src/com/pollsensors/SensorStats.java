@@ -20,7 +20,7 @@ public class SensorStats extends Activity implements SensorEventListener {
 	private Sensor gyro;
 	private Sensor accel;
 	
-	private static final int maxEvents = 1000000;
+	private static final int maxEvents = 10000000;
 	private static final int eventsBeforeWrite = 1000;
 	private static final int eventsBeforeUIUpdate = 100;
 	private int numEvents;
