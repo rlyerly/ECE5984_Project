@@ -5,6 +5,7 @@ import android.os.Environment;
 import android.app.Activity;
 import android.content.Context;
 import android.view.Menu;
+import android.view.WindowManager;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
@@ -45,7 +46,11 @@ public class SensorStats extends Activity implements SensorEventListener {
 			clearPrevFiles();
 			gyroVals = new ArrayList<Float>(3 * eventsBeforeWrite);
 			accelVals = new ArrayList<Float>(3 * eventsBeforeWrite);
+			
+			//Keep screen on
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		
+			//Get sensors & register listeners
 			sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
 			accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 			gyro = sm.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
