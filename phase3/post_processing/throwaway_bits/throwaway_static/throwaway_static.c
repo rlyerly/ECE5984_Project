@@ -106,10 +106,10 @@ int main(int argc, char** argv)
 		//Store leftover bits
 		numLeftover = (i * num2extract + numLeftover) - 32;
 		leftoverBits = (numbers[i - 1] >> (num2extract - numLeftover))
-			& MASK(numLeftover - 1);
+			& MASK(numLeftover);
 
 		//Determine number to read
-		if((numLeftover + (num2read - 1) * num2extract) >= 32)
+		if((numLeftover + (numRead - 1) * num2extract) >= 32)
 			num2read = numRead - 1;
 		else
 			num2read = numRead;
