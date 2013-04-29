@@ -94,7 +94,8 @@ uint32_t string2int(const char* string)
 /*
  * Convert strings to binary data & write to file.
  */
-void write2file(char* first, char* second, char* third, FILE* outfile)
+void write2file(char axis, char* first, char* second, char* third,
+	FILE* outfile)
 {
 	uint32_t binary[3] = {0, 0, 0};
 
@@ -102,18 +103,30 @@ void write2file(char* first, char* second, char* third, FILE* outfile)
 	binary[1] = string2int(second);
 	binary[2] = string2int(third);
 
-	fwrite((void*)binary, sizeof(uint32_t), 3, outfile);
+	switch(axis)
+	{
+	case 'x':
+		fwrite((void*)&(binary[0]), sizeof(uint32_t), 1, outfile);
+		break;
+	case 'y':
+		fwrite((void*)&(binary[1]), sizeof(uint32_t), 1, outfile);
+		break;
+	case 'z':
+	default:
+		fwrite((void*)&(binary[2]), sizeof(uint32_t), 1, outfile);
+		break;
+	}
 }
 
 int main(int argc, char** argv)
 {
 	const char* infileName = "infile.dat";
 	const char* outfileName = "outfile.dat";
-	char arg = 0;
+	char arg = 0, axis = 'x';
 	opterr = 0;
 
 	//Select input/output file
-	while((arg = getopt(argc, argv, "hi:o:")) != -1)
+	while((arg = getopt(argc, argv, "hi:o:a:")) != -1)
 	{
 		switch(arg)
 		{
@@ -126,6 +139,9 @@ int main(int argc, char** argv)
 		case 'o':
 			outfileName = optarg;
 			break;
+		case 'a':
+			axis = optarg[0];
+			break;
 		default:
 			printf("Unknown argument: %c\n", arg);
 			return 1;
@@ -133,6 +149,9 @@ int main(int argc, char** argv)
 	}
 
 	//Sanity check
+	if(axis != 'x' || axis != 'y' || axis != 'z')
+		axis = 'x';
+
 	int numLines = 0;
 
 	char first[9];
@@ -157,14 +176,14 @@ int main(int argc, char** argv)
 	//Get first line
 	if(fscanf(infile, "%s %s %s\n", first, second, third) == 3)
 	{
-		write2file(first, second, third, outfile);
+		write2file(axis, first, second, third, outfile);
 		numLines++;
 	}
 
 	//Get rest of lines
 	while(!feof(infile))
 	{
-		write2file(first, second, third, outfile);
+		write2file(axis, first, second, third, outfile);
 		numLines++;
 
 		if(fscanf(infile, "%s %s %s\n", first, second, third) < 3)
@@ -172,7 +191,7 @@ int main(int argc, char** argv)
 	}
 
 	//Save last line
-	write2file(first, second, third, outfile);
+	write2file(axis, first, second, third, outfile);
 	numLines++;
 	
 	fclose(infile);

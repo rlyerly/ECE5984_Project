@@ -32,7 +32,7 @@ int main(int argc, char** argv)
 	int arg = 0;
 	unsigned int num2extract = 32;
 
-	while((arg = getopt(argc, argv, "hi:o:n:")) != -1)
+	while((arg = getopt(argc, argv, "hi:o:n:a:")) != -1)
 	{
 		switch(arg)
 		{
