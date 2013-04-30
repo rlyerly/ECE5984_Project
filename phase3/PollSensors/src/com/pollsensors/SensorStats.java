@@ -21,16 +21,16 @@ public class SensorStats extends Activity implements SensorEventListener {
 	private Sensor gyro;
 	private Sensor accel;
 	
-	private static final int maxEvents = 10000000;
+	private static final int maxEvents = 10000;
 	private static final int eventsBeforeWrite = 1000;
 	private static final int eventsBeforeUIUpdate = 100;
 	private int numEvents;
 	private ArrayList<Float> gyroVals;
 	private ArrayList<Float> accelVals;
 	
-	private final String dataDir = "/sensor_data";
-	private final String gyroFilename = "/gyro_vals.dat";
-	private final String accelFilename = "/accel_vals.dat";
+	private final String dataDir = "/sensor_data/";
+	private final String gyroFilename = "gyro_vals.dat";
+	private final String accelFilename = "accel_vals.dat";
 	
 	private SensorStats me;
 	private OnCheckedChangeListener speed_listener;

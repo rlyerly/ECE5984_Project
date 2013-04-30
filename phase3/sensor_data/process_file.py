@@ -45,4 +45,4 @@ os.remove(filename.replace('.dat', '_processed_x.dat'))
 os.remove(filename.replace('.dat', '_processed_y.dat'))
 os.remove(filename.replace('.dat', '_processed_z.dat'))
 
-print "Graphs saved in: \n\t" + filename.replace('.dat', '_processed_x.dat').replace('data', 'graphs') + "\n\t" + filename.replace('.dat', '_processed_y.dat').replace('data', 'graphs') + "\n\t" + filename.replace('.dat', '_z.png').replace('data', 'graphs')
+print "Graphs saved in: \n\t" + filename.replace('.dat', '_x.dat').replace('data', 'graphs') + "\n\t" + filename.replace('.dat', '_y.dat').replace('data', 'graphs') + "\n\t" + filename.replace('.dat', '_z.png').replace('data', 'graphs')
