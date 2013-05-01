@@ -1,6 +1,15 @@
 ________________________________________________________________________________
 
-		FILE = ../../samples/kevins/random_devs/dev_random_10mb		ALPHA = 0.0100
+		FILE = samples/reeses/rnddata		ALPHA = 0.0100
 ________________________________________________________________________________
 
-		BITSREAD = 80000 0s = 39859 1s = 40141
+		BITSREAD = 10000 0s = 5024 1s = 4976
+		BITSREAD = 10000 0s = 5010 1s = 4990
+		BITSREAD = 10000 0s = 5036 1s = 4964
+		BITSREAD = 10000 0s = 5150 1s = 4850
+		BITSREAD = 10000 0s = 4959 1s = 5041
+		BITSREAD = 10000 0s = 4925 1s = 5075
+		BITSREAD = 10000 0s = 4890 1s = 5110
+		BITSREAD = 10000 0s = 5084 1s = 4916
+		BITSREAD = 10000 0s = 5043 1s = 4957
+		BITSREAD = 10000 0s = 4958 1s = 5042
