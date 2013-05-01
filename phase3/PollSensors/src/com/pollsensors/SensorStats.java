@@ -24,17 +24,19 @@ public class SensorStats extends Activity implements SensorEventListener {
 	private static final int maxEvents = 10000;
 	private static final int eventsBeforeWrite = 1000;
 	private static final int eventsBeforeUIUpdate = 100;
-	private int numEvents;
+	private int numAccelEvents;
+	private int numGyroEvents;
 	private ArrayList<Float> gyroVals;
 	private ArrayList<Float> accelVals;
 	
-	private final String dataDir = "/sensor_data/";
-	private final String gyroFilename = "gyro_vals.dat";
-	private final String accelFilename = "accel_vals.dat";
+	private final String dataDir = "/sensor_data";
+	private final String gyroFilename = "/gyro_vals.dat";
+	private final String accelFilename = "/accel_vals.dat";
 	
 	private SensorStats me;
 	private OnCheckedChangeListener speed_listener;
 	private static boolean started = false;
+	private long startTimestamp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,26 +44,26 @@ public class SensorStats extends Activity implements SensorEventListener {
 		
 		if(!started)
 		{
-			numEvents = 0;
 			clearPrevFiles();
+			numAccelEvents = 0;
+			numGyroEvents = 0;
 			gyroVals = new ArrayList<Float>(3 * eventsBeforeWrite);
 			accelVals = new ArrayList<Float>(3 * eventsBeforeWrite);
 			
 			//Keep screen on
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+			startTimestamp = System.nanoTime();
 		
 			//Get sensors & register listeners
 			sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
 			accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 			gyro = sm.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-			//TODO checking for other accelerators/gyroscopes
-			sm.registerListener(this, accel, SensorManager.SENSOR_DELAY_UI);
-			sm.registerListener(this, gyro, SensorManager.SENSOR_DELAY_UI);
+			sm.registerListener(this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+			sm.registerListener(this, gyro, SensorManager.SENSOR_DELAY_FASTEST);
 			started = true;
 		}
 		
 		setContentView(R.layout.activity_sensor_stats);
-		System.out.println("In \"onCreate\"");
 	}
 
 	@Override
@@ -123,29 +125,72 @@ public class SensorStats extends Activity implements SensorEventListener {
 		TextView tv;
 		
 		if(se.sensor.getType() == Sensor.TYPE_GYROSCOPE)
+		{
+			numGyroEvents++;
 			for(float val : se.values)
 				gyroVals.add(val);
+		}
 		else
+		{
+			numAccelEvents++;
 			for(float val : se.values)
 				accelVals.add(val);
-		
-		numEvents++;
-		if(numEvents >= maxEvents)
-		{
-			cleanup();
-			tv = (TextView)findViewById(R.id.cur_sample_num);
-			tv.setText(numEvents + " (finished)");
 		}
-		else if((numEvents % eventsBeforeUIUpdate) == 0)
+		
+		if(numGyroEvents >= maxEvents)
+		{
+			writeTime("gyro_time.dat", System.nanoTime() - startTimestamp);
+			numGyroEvents = 0;
+			
+			if(numAccelEvents >= maxEvents)
+			{
+				cleanup();
+				tv = (TextView)findViewById(R.id.cur_sample_num);
+				tv.setText("(finished)");
+			}
+			else
+			{
+				sm.unregisterListener(me);
+				sm.registerListener(me, accel, SensorManager.SENSOR_DELAY_FASTEST);
+			}
+		}
+		else if(numAccelEvents >= maxEvents)
+		{
+			writeTime("accel_time.dat", System.nanoTime() - startTimestamp);
+			numAccelEvents = 0;
+			
+			if(numGyroEvents >= maxEvents)
+			{
+				cleanup();
+				tv = (TextView)findViewById(R.id.cur_sample_num);
+				tv.setText("(finished)");	
+			}
+			else
+			{
+				sm.unregisterListener(me);
+				sm.registerListener(me, gyro, SensorManager.SENSOR_DELAY_FASTEST);
+			}
+		}
+		else if((numAccelEvents % eventsBeforeUIUpdate) == 0)
 		{
 			tv = (TextView)findViewById(R.id.cur_sample_num);
-			tv.setText(String.valueOf(numEvents));
+			tv.setText(String.valueOf(numAccelEvents));
 			
-			if((numEvents % eventsBeforeWrite) == 0 && sdCardAvailable())
+			if((numAccelEvents % eventsBeforeWrite) == 0 /*&& sdCardAvailable()*/)
 			{
-				writeToSDCard();
-				gyroVals.clear();
+				//writeToSDCard();
+				//gyroVals.clear();
 				accelVals.clear();
+			}
+		}
+		else if((numGyroEvents % eventsBeforeUIUpdate) == 0)
+		{
+			tv = (TextView)findViewById(R.id.cur_sample_num);
+			tv.setText(String.valueOf(numGyroEvents));
+			
+			if((numAccelEvents % eventsBeforeWrite) == 0)
+			{
+				gyroVals.clear();
 			}
 		}
 	}
@@ -153,8 +198,8 @@ public class SensorStats extends Activity implements SensorEventListener {
 	public void cleanup()
 	{	
 		sm.unregisterListener(this);
-		if(sdCardAvailable())
-			writeToSDCard();
+		/*if(sdCardAvailable())
+			writeToSDCard();*/
 		//TODO write to a different internal location
 	}
 	
@@ -226,6 +271,36 @@ public class SensorStats extends Activity implements SensorEventListener {
 					writer.write("\n");
 				}
 			}
+			writer.close();
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+			System.exit(-1);
+		}
+	}
+	
+	private void writeTime(String filename, long time)
+	{
+		File root, dir, file;
+		FileWriter writer;
+		
+		root = android.os.Environment.getExternalStorageDirectory();
+		System.out.println("SD Card directory: " + root);
+		dir = new File(root.getAbsolutePath() + dataDir);
+		System.out.println("Directory: " + dir);
+		if(!dir.mkdirs())
+			System.out.println("Could not make parent directory!");
+		
+		try
+		{
+			file = new File(dir.getAbsolutePath() + filename);
+			System.out.println("Gyrofile: " + file);
+			if(!file.exists())
+				file.createNewFile();
+			
+			writer = new FileWriter(file, true);
+			writer.write((Long.valueOf(time)).toString());
 			writer.close();
 		}
 		catch(IOException ioe)
