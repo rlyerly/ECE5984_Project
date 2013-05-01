@@ -3,13 +3,12 @@
 
     <string name="app_name">PollSensors</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="fast">Fast</string>
     <string name="help_text">Select the sampling speed of the gyroscope/accelerometer:</string>
     <string name="slow">Slow</string>
     <string name="medium">Medium</string>
     <string name="fastest">Fastest</string>
-    <string name="number_of_samples">Number samples of taken:</string>
-    <string name="zero">0</string>
+    <string name="cur_sample_speed">Current sampling speed (us):</string>
+    <string name="default_speed">60000</string>
 
 </resources>

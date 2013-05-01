@@ -9,60 +9,62 @@
     tools:context=".SensorStats" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/help_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/help_text" />
 
     <RadioGroup
-        android:id="@+id/sample_select"
+        android:id="@+id/speed_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="27dp" >
+        android:layout_alignLeft="@+id/help_text"
+        android:layout_below="@+id/help_text"
+        android:checkedButton="@+id/medium" >
+    
+    	<RadioButton
+	        android:id="@+id/slow"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="14dp"
+        	android:text="@string/slow" />
 
-        <RadioButton
-            android:id="@+id/slow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/slow" />
-        
-        <RadioButton
-            android:id="@+id/medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medium"
-            android:checked="true" />
-        
-        <RadioButton
-            android:id="@+id/fast"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fast" />
-        
-        <RadioButton
-            android:id="@+id/no_delay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fastest" />
+    	<RadioButton
+	        android:id="@+id/medium"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/medium" />
+
+	    <RadioButton
+        	android:id="@+id/fast"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/fast" />
+
+    	<RadioButton
+	        android:id="@+id/fastest"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/fastest" />
+    
     </RadioGroup>
 
     <TextView
-        android:id="@+id/num_samples"
+        android:id="@+id/cur_sample_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/sample_select"
-        android:layout_below="@+id/sample_select"
-        android:layout_marginTop="25dp"
-        android:text="@string/number_of_samples" />
+        android:layout_alignLeft="@+id/speed_select"
+        android:layout_below="@+id/speed_select"
+        android:layout_marginTop="24dp"
+        android:text="@string/cur_sample_speed" />
 
     <TextView
-        android:id="@+id/cur_sample_num"
+        android:id="@+id/sample_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/num_samples"
-        android:layout_alignRight="@+id/textView1"
-        android:text="@string/zero" />
+        android:layout_alignBaseline="@+id/cur_sample_speed"
+        android:layout_alignBottom="@+id/cur_sample_speed"
+        android:layout_alignRight="@+id/help_text"
+        android:text="@string/default_speed" />
 
 </RelativeLayout>

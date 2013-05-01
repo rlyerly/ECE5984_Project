@@ -1,312 +1,204 @@
 package com.pollsensors;
 
 import android.os.Bundle;
-import android.os.Environment;
 import android.app.Activity;
 import android.content.Context;
 import android.view.Menu;
-import android.view.WindowManager;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import android.hardware.*;
 
-import java.io.*;
-import java.util.ArrayList;
-
-public class SensorStats extends Activity implements SensorEventListener {
-
+public class SensorStats extends Activity implements SensorEventListener
+{
+	// Sensor information
 	private SensorManager sm;
 	private Sensor gyro;
 	private Sensor accel;
+	private int gyroSampleSpeed;
+	private int accelSampleSpeed;
 	
-	private static final int maxEvents = 10000;
-	private static final int eventsBeforeWrite = 1000;
-	private static final int eventsBeforeUIUpdate = 100;
-	private int numAccelEvents;
-	private int numGyroEvents;
-	private ArrayList<Float> gyroVals;
-	private ArrayList<Float> accelVals;
-	
-	private final String dataDir = "/sensor_data";
-	private final String gyroFilename = "/gyro_vals.dat";
-	private final String accelFilename = "/accel_vals.dat";
-	
+	// Miscellaneous members
 	private SensorStats me;
-	private OnCheckedChangeListener speed_listener;
-	private static boolean started = false;
-	private long startTimestamp;
+	private final static String prevSampleSpeed = "prevSampleSpeed";
 	
+	/**
+	 * Obtains accelerometer/gyroscope handles and registers this activity as a
+	 * listener.
+	 */
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_sensor_stats);
+		me = this;
 		
-		if(!started)
-		{
-			clearPrevFiles();
-			numAccelEvents = 0;
-			numGyroEvents = 0;
-			gyroVals = new ArrayList<Float>(3 * eventsBeforeWrite);
-			accelVals = new ArrayList<Float>(3 * eventsBeforeWrite);
+		//Get sensors
+		sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+		gyro = sm.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+		accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+		//Set sample speed
+		if(savedInstanceState != null)
+		{	
+			//Set sample speeds to previous values
+			gyroSampleSpeed = savedInstanceState.getInt(prevSampleSpeed);
+			accelSampleSpeed = savedInstanceState.getInt(prevSampleSpeed);
+			String speedText = "60000";
 			
-			//Keep screen on
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-			startTimestamp = System.nanoTime();
-		
-			//Get sensors & register listeners
-			sm = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
-			accel = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-			gyro = sm.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-			sm.registerListener(this, accel, SensorManager.SENSOR_DELAY_FASTEST);
-			sm.registerListener(this, gyro, SensorManager.SENSOR_DELAY_FASTEST);
-			started = true;
+			//Mark correct radio button
+			RadioGroup rg = (RadioGroup)findViewById(R.id.speed_select);
+			switch(gyroSampleSpeed)
+			{
+			case SensorManager.SENSOR_DELAY_NORMAL:
+				rg.check(R.id.slow);
+				speedText = "200000";
+				break;
+			case SensorManager.SENSOR_DELAY_UI:
+				rg.check(R.id.medium);
+				speedText = "60000";
+				break;
+			case SensorManager.SENSOR_DELAY_GAME:
+				rg.check(R.id.fast);
+				speedText = "20000";
+				break;
+			case SensorManager.SENSOR_DELAY_FASTEST:
+				rg.check(R.id.fastest);
+				speedText = "0";
+				break;
+			default:
+				rg.check(R.id.medium);
+				speedText = "60000";
+				break;
+			}
+			
+			//Update displayed sample speed
+			TextView tv = (TextView)findViewById(R.id.sample_speed);
+			tv.setText(speedText);
+		}
+		else
+		{
+			//Set sample speeds to default values
+			gyroSampleSpeed = SensorManager.SENSOR_DELAY_UI;
+			accelSampleSpeed = SensorManager.SENSOR_DELAY_UI;
 		}
 		
-		setContentView(R.layout.activity_sensor_stats);
+		//Register listeners
+		sm.registerListener(this, gyro, gyroSampleSpeed);
+		sm.registerListener(this, accel, accelSampleSpeed);
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.sensor_stats, menu);
 		return true;
 	}
 	
+	/**
+	 * Register a listener for the radio buttons to set the sample speed
+	 */
 	@Override
-	public void onResume() {
+	public void onResume()
+	{
 		super.onResume();
 		
-		RadioGroup rg = (RadioGroup)findViewById(R.id.sample_select);
-		me = this;
-		speed_listener = new OnCheckedChangeListener()
+		//Register a radio button listener to change sample speed
+		OnCheckedChangeListener speedListener = new OnCheckedChangeListener()
 		{
 			@Override
-			public void onCheckedChanged(RadioGroup rg, int rb) {
-				sm.unregisterListener(me);
-				int delay = SensorManager.SENSOR_DELAY_NORMAL;
+			public void onCheckedChanged(RadioGroup rg, int rb)
+			{
+				String speedText = "60000";
 				switch(rb)
 				{
 				case R.id.slow:
-					delay = SensorManager.SENSOR_DELAY_NORMAL;
+					gyroSampleSpeed = SensorManager.SENSOR_DELAY_NORMAL;
+					accelSampleSpeed = SensorManager.SENSOR_DELAY_NORMAL;
+					speedText = "200000";
 					break;
 				case R.id.medium:
-					delay = SensorManager.SENSOR_DELAY_UI;
+					gyroSampleSpeed = SensorManager.SENSOR_DELAY_UI;
+					accelSampleSpeed = SensorManager.SENSOR_DELAY_UI;
+					speedText = "60000";
 					break;
 				case R.id.fast:
-					delay = SensorManager.SENSOR_DELAY_GAME;
+					gyroSampleSpeed = SensorManager.SENSOR_DELAY_GAME;
+					accelSampleSpeed = SensorManager.SENSOR_DELAY_GAME;
+					speedText = "20000";
 					break;
-				case R.id.no_delay:
-					delay = SensorManager.SENSOR_DELAY_FASTEST;
+				case R.id.fastest:
+					gyroSampleSpeed = SensorManager.SENSOR_DELAY_FASTEST;
+					accelSampleSpeed = SensorManager.SENSOR_DELAY_FASTEST;
+					speedText = "0";
 					break;
 				default:
-					delay = SensorManager.SENSOR_DELAY_NORMAL;
+					gyroSampleSpeed = SensorManager.SENSOR_DELAY_UI;
+					accelSampleSpeed = SensorManager.SENSOR_DELAY_UI;
+					speedText = "60000";
+					break;
 				}
-				sm.registerListener(me, gyro, delay);
-				sm.registerListener(me, accel, delay);
+				sm.registerListener(me, gyro, gyroSampleSpeed);
+				sm.registerListener(me, accel, accelSampleSpeed);
+				
+				//Display new sample speed
+				TextView tv = (TextView)findViewById(R.id.sample_speed);
+				tv.setText(String.valueOf(speedText));
 			}
 		};
-		rg.setOnCheckedChangeListener(speed_listener);
+		RadioGroup rg = (RadioGroup)findViewById(R.id.speed_select);
+		rg.setOnCheckedChangeListener(speedListener);
 	}
 	
+	/**
+	 * When the activity is paused, don't listen for sensor events.
+	 */
 	@Override
-	public void onPause() {
+	public void onPause()
+	{
 		super.onPause();
-		// no-op, we want to keep collecting sensor stats in the background
+		
+		sm.unregisterListener(this);
+	}
+	
+	/**
+	 * Save previous sample speed.
+	 */
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState)
+	{
+		super.onSaveInstanceState(savedInstanceState);
+		
+		savedInstanceState.putInt(prevSampleSpeed, gyroSampleSpeed);
 	}
 	
 	@Override
-	public void onAccuracyChanged(Sensor s, int a) {
-		// no-op, don't care
+	public void onAccuracyChanged(Sensor s, int a)
+	{
+		// no-op, don't care for now
 	}
 
+	/**
+	 * Feed data from the sensors to the entropy pool.
+	 */
 	@Override
-	public void onSensorChanged(SensorEvent se) {
-		TextView tv;
-		
+	public void onSensorChanged(SensorEvent se)
+	{	
 		if(se.sensor.getType() == Sensor.TYPE_GYROSCOPE)
 		{
-			numGyroEvents++;
 			for(float val : se.values)
-				gyroVals.add(val);
+			{
+				//TODO post processing/add to entropy pool
+			}
 		}
 		else
 		{
-			numAccelEvents++;
 			for(float val : se.values)
-				accelVals.add(val);
-		}
-		
-		if(numGyroEvents >= maxEvents)
-		{
-			writeTime("gyro_time.dat", System.nanoTime() - startTimestamp);
-			numGyroEvents = 0;
-			
-			if(numAccelEvents >= maxEvents)
 			{
-				cleanup();
-				tv = (TextView)findViewById(R.id.cur_sample_num);
-				tv.setText("(finished)");
+				//TODO post processing/add to entropy pool
 			}
-			else
-			{
-				sm.unregisterListener(me);
-				sm.registerListener(me, accel, SensorManager.SENSOR_DELAY_FASTEST);
-			}
-		}
-		else if(numAccelEvents >= maxEvents)
-		{
-			writeTime("accel_time.dat", System.nanoTime() - startTimestamp);
-			numAccelEvents = 0;
-			
-			if(numGyroEvents >= maxEvents)
-			{
-				cleanup();
-				tv = (TextView)findViewById(R.id.cur_sample_num);
-				tv.setText("(finished)");	
-			}
-			else
-			{
-				sm.unregisterListener(me);
-				sm.registerListener(me, gyro, SensorManager.SENSOR_DELAY_FASTEST);
-			}
-		}
-		else if((numAccelEvents % eventsBeforeUIUpdate) == 0)
-		{
-			tv = (TextView)findViewById(R.id.cur_sample_num);
-			tv.setText(String.valueOf(numAccelEvents));
-			
-			if((numAccelEvents % eventsBeforeWrite) == 0 /*&& sdCardAvailable()*/)
-			{
-				//writeToSDCard();
-				//gyroVals.clear();
-				accelVals.clear();
-			}
-		}
-		else if((numGyroEvents % eventsBeforeUIUpdate) == 0)
-		{
-			tv = (TextView)findViewById(R.id.cur_sample_num);
-			tv.setText(String.valueOf(numGyroEvents));
-			
-			if((numAccelEvents % eventsBeforeWrite) == 0)
-			{
-				gyroVals.clear();
-			}
-		}
-	}
-	
-	public void cleanup()
-	{	
-		sm.unregisterListener(this);
-		/*if(sdCardAvailable())
-			writeToSDCard();*/
-		//TODO write to a different internal location
-	}
-	
-	private boolean sdCardAvailable()
-	{
-		System.out.println("SD Card status: " + Environment.getExternalStorageState());
-		return ((Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
-				? true : false);
-	}
-	
-	private void clearPrevFiles()
-	{
-		File gyroFile, accelFile;
-		gyroFile = new File(Environment.getExternalStorageDirectory() + dataDir
-				+ gyroFilename);
-		if(gyroFile.exists())
-			gyroFile.delete();
-		accelFile = new File(Environment.getExternalStorageDirectory() + dataDir
-				+ accelFilename);
-		if(accelFile.exists())
-				accelFile.delete();
-	}
-	
-	private void writeToSDCard()
-	{
-		File root, dir, gyroFile, accelFile;
-		FileWriter writer;
-		int i = 0;
-		
-		root = android.os.Environment.getExternalStorageDirectory();
-		System.out.println("SD Card directory: " + root);
-		dir = new File(root.getAbsolutePath() + dataDir);
-		System.out.println("Directory: " + dir);
-		if(!dir.mkdirs())
-			System.out.println("Could not make parent directory!");
-		
-		try
-		{	
-			gyroFile = new File(dir.getAbsolutePath() + gyroFilename);
-			System.out.println("Gyrofile: " + gyroFile);
-			if(!gyroFile.exists())
-				gyroFile.createNewFile();
-			accelFile = new File(dir.getAbsolutePath() + accelFilename);
-			System.out.println("Accelfile: " + accelFile);
-			if(!accelFile.exists())
-				accelFile.createNewFile();
-			
-			writer = new FileWriter(gyroFile, true);
-			for(Float val : gyroVals)
-			{
-				writer.write(Integer.toHexString(Float.floatToRawIntBits(val)) + " ");
-				i++;
-				if((i % 3) == 0)
-				{
-					i = 0;
-					writer.write("\n");
-				}
-			}
-			writer.close();
-			
-			writer = new FileWriter(accelFile, true);
-			for(Float val : accelVals)
-			{
-				writer.write(Integer.toHexString(Float.floatToRawIntBits(val)) + " ");
-				i++;
-				if((i % 3) == 0)
-				{
-					i = 0;
-					writer.write("\n");
-				}
-			}
-			writer.close();
-		}
-		catch(IOException ioe)
-		{
-			ioe.printStackTrace();
-			System.exit(-1);
-		}
-	}
-	
-	private void writeTime(String filename, long time)
-	{
-		File root, dir, file;
-		FileWriter writer;
-		
-		root = android.os.Environment.getExternalStorageDirectory();
-		System.out.println("SD Card directory: " + root);
-		dir = new File(root.getAbsolutePath() + dataDir);
-		System.out.println("Directory: " + dir);
-		if(!dir.mkdirs())
-			System.out.println("Could not make parent directory!");
-		
-		try
-		{
-			file = new File(dir.getAbsolutePath() + filename);
-			System.out.println("Gyrofile: " + file);
-			if(!file.exists())
-				file.createNewFile();
-			
-			writer = new FileWriter(file, true);
-			writer.write((Long.valueOf(time)).toString());
-			writer.close();
-		}
-		catch(IOException ioe)
-		{
-			ioe.printStackTrace();
-			System.exit(-1);
 		}
 	}
 }
