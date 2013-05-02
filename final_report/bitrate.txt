@@ -1,2 +1,2 @@
-random	urandom	RawSensors	BitFiltering	vonNeumann	random+Sensors	random+vonNeumann
-10	100000	5000		1234123		1234567		9999999		63636
+random	urandom		RawSensors	BitFiltering	vonNeumann	random+RawSensors	random+vonNeumann
+21	15506989	86127		2691		18482		11860			19894
