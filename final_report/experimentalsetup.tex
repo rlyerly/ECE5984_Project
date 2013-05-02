@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Experimental Setup:
+%%  - What our methodology was
+%%  - Details about the Phones
+%%  - Some information about NIST
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to show that sampling accelerometer and gyroscope data is an effective
+mechanism for randomness generation on mobile phones, a testing methodology was
+developed. This testing methodology involved gathering data from mobile phones
+and utilizing well regarded statistical analysis suites to determine the quality
+of the results. To maintain data equivalence across testing, a single platform
+was chosen for all of the tests. 
+
+%%% Information about the Phone
+%%%   - Specs
+%%%   - Why it was chosen over other phones... lol
+\subsection{Samsung Nexus S}
+
+The platform used for testing was the Samsung Nexus S. The Nexus S was first
+released in December of 2010. It uses a Samsung Exynos 3110 System on Chip
+(SoC). The Exynos 3110 is a single core ARM Cortex-A8 using the ARMv7
+instruction set. In the Nexus S, the processor operates at a 1GHz clock
+frequency and is paired with 512MB of main memory. The phone originally shipped
+with Android 2.3 installed but was updated to the latest supported build, 4.1.2.
+The Nexus S has both a three-axis gyroscope and accelerometer provided by the
+InvenSense MPU-6050. The MPU-6050 communicates to the CPU via an
+I\textsuperscript{2}C bus operating at 400KHz. 
+
+The Nexus S was selected because it represented both a vanilla Android mobile
+phone, but also because it is an example of a widely popular mobile phone that
+does not have a hardware random number generator. As such it was a good first
+target for implementing an additional source of entropy for the kernel's entropy
+pool.
+
+
+%%% The Testing Methodology:
+%%%  - What was done
+%%%  - What data was gathered
+%%%  - How was it analyzed 
+\subsection{Methodology}
+
