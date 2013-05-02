@@ -3,6 +3,16 @@
 %%  - What our methodology was
 %%  - Details about the Phones
 %%  - Some information about NIST
+%%
+%%%%% Replacing these as well:
+%%% \section{Plan for Development}
+%%% \input{tasks}
+%%% 
+%%% \subsection{Risks and Unknowns}
+%%% \input{risks_and_unknowns}
+%%% 
+%%% \section{Deliverables}
+%%% \input{deliverables}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In order to show that sampling accelerometer and gyroscope data is an effective
@@ -22,16 +32,40 @@ released in December of 2010. It uses a Samsung Exynos 3110 System on Chip
 (SoC). The Exynos 3110 is a single core ARM Cortex-A8 using the ARMv7
 instruction set. In the Nexus S, the processor operates at a 1GHz clock
 frequency and is paired with 512MB of main memory. The phone originally shipped
-with Android 2.3 installed but was updated to the latest supported build, 4.1.2.
-The Nexus S has both a three-axis gyroscope and accelerometer provided by the
-InvenSense MPU-6050. The MPU-6050 communicates to the CPU via an
-I\textsuperscript{2}C bus operating at 400KHz. 
+with Android 2.3 Gingerbread installed but was updated to the latest supported
+build, 4.1.2 Jelly Bean.  The Nexus S has both a three-axis gyroscope and
+accelerometer provided by the InvenSense MPU-6050. The MPU-6050 communicates to
+the CPU via an I\textsuperscript{2}C bus operating at 400KHz. 
 
 The Nexus S was selected because it represented both a vanilla Android mobile
 phone, but also because it is an example of a widely popular mobile phone that
 does not have a hardware random number generator. As such it was a good first
 target for implementing an additional source of entropy for the kernel's entropy
-pool.
+pool. Ideally, by providing fast random number generation on a platform that
+suffers from a reduced number of sources of entropy, improved cryptographic
+speed as well as security could be brought to users of such devices.
+
+
+%%% Background about NIST
+\subsection{NIST Statistical Testing Suite}
+
+The National Institute of Standards and Technology (NIST) publishes a
+statistical testing suite for the verification of random number generators.
+Described in Special Publication 800-22 \cite{nist}, the \textit{Statistical
+Test Suite for Random and Pseudorandom Number Generators for Cryptographic
+Applications} comprises 15 statistical tests that analyze a source of bitstreams
+for the apparent lack of entropy. The documentation does note both that some
+tests are expected to fail even for good pseudorandom number generators and it
+should further be noted that even a random number generator that appears to pass
+these tests is not necessarily random, it just has the appearance thereof.
+
+The NIST statistical test suite was selected for use because it provides a
+rigorous testing suite that is recognized as providing quality statistical
+analysis of apparently random bitstreams. This statistical test suite was used
+to test the quality of potentially random data from several sources, including
+unprocessed data from the sensors, random devices from the stock system, as well
+as several modifications on adding data from the sensors to the kernel's entropy
+pool and drawing from the randomness devices.
 
 
 %%% The Testing Methodology:
