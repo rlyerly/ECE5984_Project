@@ -492,23 +492,39 @@ similar device in principal to the accelerometer, striving to achieve a high lev
 modern phones and are extremely cheap to include in any system.  Because of the low potential for bias and the widespread use of these devices, they are an
 attractive means for adding entropy to a random number generator.
 
+%old
+%\subsection{Problem Statement}
+%Due to the increasing number of mobile platforms and their use of cryptographic algorithms and random number generators, there is demand for quick 
+%and power efficient random number generators in the mobile environment. Specifically on our target hardware, Qualcomm's APQ8060 Dragonboard, we have 
+%access to the random and urandom devices given via the Linux kernel. The random device is the true random number generation option in the Linux 
+%environment, it is therefore a safe baseline for comparison as it is fairly consistent between Android devices. There are issues with this current solution.
+%Firstly, a performance decrease can be witnessed when the entropy pool, used by random, is depleted to 128 bits. This is may be more prevalent in Android's
+%Event Loop software model, as there isn't a clear multi-tasking structure. Another flaw comes to the scene when programmers and users try to circumvent
+%this performance drain, by either filling the entropy pool with a none random bit-stream or by using the urandom device where the random device is more secure.
+%We witness the effects of these issues in sources like \cite{ron_was_wrong}, which found that 4\% of 6.6 million certificates and PGP keys use the same RSA 
+%modulus and therefore possibly have the exact same private key as someone else. The authors of \cite{chip_and_skim} exposed poor random number generators
+%in EMV machines, used in chip and pin payments. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
+%Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
+
+%new
 \subsection{Problem Statement}
 Due to the increasing number of mobile platforms and their use of cryptographic algorithms and random number generators, there is demand for quick 
-and power efficient random number generators in the mobile environment. Specifically on our target hardware, Qualcomm's APQ8060 Dragonboard, we have 
-access to the random and urandom devices given via the Linux kernel. The random device is the true random number generation option in the Linux 
-environment, it is therefore a safe baseline for comparison as it is fairly consistent between Android devices. There are issues with this current solution.
-Firstly, a performance decrease can be witnessed when the entropy pool, used by random, is depleted to 128 bits. This is may be more prevalent in Android's
+and power efficient random number generators in the mobile environment. Specifically we targeted Android based smart phones,this grants us 
+access to the random and urandom devices given via the Linux kernel. The random device is the true random number generating option in the Linux 
+environment, it is therefore a safe baseline for comparison as it is fairly consistent between Android devices. There are several issues with this current solution.
+Firstly, a performance decrease can be witnessed when the entropy pool, used by the random device, is depleted to 128 bits. This may be more prevalent in Android's
 Event Loop software model, as there isn't a clear multi-tasking structure. Another flaw comes to the scene when programmers and users try to circumvent
-this performance drain, by either filling the entropy pool with a none random bit-stream or by using the urandom device where the random device is more secure.
+this performance drain, by either filling the entropy pool with a none random bit-stream or by using the urandom device when the random device is more secure.
 We witness the effects of these issues in sources like \cite{ron_was_wrong}, which found that 4\% of 6.6 million certificates and PGP keys use the same RSA 
 modulus and therefore possibly have the exact same private key as someone else. The authors of \cite{chip_and_skim} exposed poor random number generators
 in EMV machines, used in chip and pin payments. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
-Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
+Therefore there is a clear need for a low power true random generator that is applicable to legacy and future mobile devices on the market.
 
 \section{Proposed Solution}
+%Kevin: possibly change to have independent post processing blocks and change the word daemon
 \begin{figure}[t]
 	\includegraphics[width=\columnwidth]{proposed_solution}
-	\caption{Block diagram of the proposed solution.  Our daemon will poll from the accelerometer and gyroscope (when requested), perform post-processing and feed random bits into the Linux entropy pool via system calls.}
+	\caption{Block diagram of the proposed solution.  Our application will poll from the accelerometer and gyroscope (when requested), perform post-processing and feed random bits into the Linux entropy pool via system calls.}
 	\label{proposed_solution_block}
 \end{figure}
 
@@ -517,22 +533,35 @@ most of these devices have the potential for strong bias.  Additionally, because
 frequency can cause serious system performance and energy issues.  Therefore, it is necessary to not only use devices that have high quality randomness,
 but to use those devices in an intelligent manner so as to not overwhelm the computational and energy resources of the device.
 
-We propose the implementation of a daemon process that polls data from the accelerometer and gyroscope (when the entropy pool is running low), processes
+We propose the implementation of a Android process that polls data from the accelerometer and gyroscope (when the entropy pool is running low), processes
 input data to eliminate sources of bias, and feeds the data into the entropy pool.  Fig.~\ref{proposed_solution_block} shows the architecture for
-our daemon.  Android built on Linux exposes standard interfaces to the hardware sensors for data retrieval; additionally, Linux provides system calls
-to feed random data into the entropy pool.  Our daemon will interact with both of these interfaces.
+our application. Android built on Linux exposes standard interfaces to the hardware sensors for data retrieval; additionally, Linux provides system calls
+to feed random data into the entropy pool.  Our application will interact with both of these interfaces.
 
+%There are many types of post processing that can be implemented to increase the uniformity of the random numbers generated.  Hash algorithms like SHA-3
+%\cite{keccak} can be used to eliminate bias.  Similarly, Barak et al. propose a technique whereby random numbers are pulled from several independent
+%devices \cite{independent_devices}.  Two of these numbers are multiplied together and added to a third number to strengthen the randomness.  Barak et
+%al. propose another technique where random numbers are multiplied by a Toeplitz matrix to approach a uniform distribution \cite{true_rng}.  These
+%techniques will be implemented and compared for their effectiveness and computational complexity.
+%
+%Random numbers generated by our daemon will be compared to the stock Android/Linux random number generator (which includes an on-board hardware
+%RNG that may not be present on all mobile devices).  These two sources will be compared on three dimensions: quality of random numbers generated,
+%energy draw from using the random number generator, and computational resources used by random number generation.  The DIEHARD \cite{diehard} / NIST 
+%\cite{nist} benchmarks will be used to evaluate the quality of the random numbers generated; synthetic benchmarks will be written to evaluate the energy
+%draw and computational complexity of the random number generators.
+
+%just mention V. N. Whitening here?
 There are many types of post processing that can be implemented to increase the uniformity of the random numbers generated.  Hash algorithms like SHA-3
 \cite{keccak} can be used to eliminate bias.  Similarly, Barak et al. propose a technique whereby random numbers are pulled from several independent
 devices \cite{independent_devices}.  Two of these numbers are multiplied together and added to a third number to strengthen the randomness.  Barak et
 al. propose another technique where random numbers are multiplied by a Toeplitz matrix to approach a uniform distribution \cite{true_rng}.  These
 techniques will be implemented and compared for their effectiveness and computational complexity.
 
-Random numbers generated by our daemon will be compared to the stock Android/Linux random number generator (which includes an on-board hardware
-RNG that may not be present on all mobile devices).  These two sources will be compared on three dimensions: quality of random numbers generated,
-energy draw from using the random number generator, and computational resources used by random number generation.  The DIEHARD \cite{diehard} / NIST 
-\cite{nist} benchmarks will be used to evaluate the quality of the random numbers generated; synthetic benchmarks will be written to evaluate the energy
-draw and computational complexity of the random number generators.
+Random numbers generated by our application will be compared to the stock Android/Linux random number generator (which does not include an on-board hardware
+RNG that may be present on newer mobile devices).  These two sources will be compared on three dimensions: quality of random numbers generated,
+energy draw from using the random number generator, and computational resources used by random number generation.  The NIST 
+\cite{nist} benchmarks will be used to evaluate the quality of the random numbers generated; synthetic benchmarks will be written to evaluate the
+entropy rate and the computational complexity of the random number generators.
 
 %% Talk about the power usage
 \input{task-power}
