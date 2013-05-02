@@ -1,0 +1,12 @@
+%touchscreen
+
+Additional research has also explored the use of a mobile device's touch 
+screen as a source for random number generation.  One particular paper 
+\cite{montville2003random}, discussed the use of an input application presented 
+to the end-user where they would move their finger to generate 
+coordinates.  These coordinates were filtered to only use the lower 
+eight bits of each value and produced good entropy.  However, this 
+solution is only good for generating random data infrequently.  An 
+example use might be generating a password or key that doesn't change
+often.  For encrypting session data, such as Transport Layer Security (TLS), it would require
+more interaction from the end-user and be inconvenient.

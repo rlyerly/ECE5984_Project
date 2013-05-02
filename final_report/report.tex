@@ -505,7 +505,6 @@ modulus and therefore possibly have the exact same private key as someone else. 
 in EMV machines, used in chip and pin payments. Companies, such as Qualcomm, provide hardware random number generators in their System on a Chip (SoC) architectures to combat these drawbacks. 
 Therefore there is a clear need for a low power solution that is applicable to existing and future mobile devices on the market.
 
-
 \section{Proposed Solution}
 \begin{figure}[t]
 	\includegraphics[width=\columnwidth]{proposed_solution}
@@ -538,13 +537,6 @@ draw and computational complexity of the random number generators.
 %% Talk about the power usage
 \input{task-power}
 
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[scale=0.71]{proj-ghantt-v3}
-    \caption{Assigned tasks and estimated time of completion}
-    \label{fig:gahntt}
-\end{figure*}
-
 \subsection{Expectations}
 \input{expectations}
 
@@ -563,6 +555,43 @@ draw and computational complexity of the random number generators.
 \section{Experimental Setup}
 
 \section{Results}
+
+\section{Future Work}
+In this paper we present analysis for two sensors on an Android smartphone,
+the accelerometer and gyroscope.  However, these devices are becoming
+increasingly diverse in terms of capabilities; many newer devices include
+near-field communications, GPS, magnetometers, etc.  Additionally, phones
+contain cameras, microphones and touchscreens, all of which have been studied
+as sources of random bits.  These sensors and devices could potentially be
+leveraged to increase the diversity of sources and the possibly increase the
+entropy in the produced data.  Investigating the power efficiency of the system
+related to the number of devices utilized and the sampling rate of these
+devices would also be another area to explore, as mobile devices are at the
+mercy of the life of the battery.
+
+One feature of the Android ecosystem, which is simultaneously an advantage and
+a disadvantage, is the variability in phone designs.  While we have evaluated
+one particular set of sensors on a particular model of phone, there are
+innumerable designs for which the data obtained from the sensors varies widely.
+Initial testing of several newer models of phones show raw data from the
+accelerometer and gyroscope may provide higher-quality random bits than
+the values obtained from the Nexus S.  Evaluating a wide range of these devices
+could provide better insight into whether using these devices for true random
+number generation is a viable means for augmenting the sources of entropy for
+the Linux entropy pool.
+
+Finaly, further investigating different types of post processing may also provide a
+means for obtaining higher quality bits from the devices.  While we have
+presented several basic forms of post processing (bit filtering and von-Neumann
+whitening), many authors have published work in the field of randomness
+extraction.  Barak et. al. propose a mathematical model, based on the influence
+an attacker may have over the source of random data, and an approach to
+constructing a randomness extraction function which is guaranteed to provide
+good random bits \cite{true_rng_changing_environments}.  Additionally, Barak
+et. al. propose a method for combining data from independent sources to
+provide higher quality random bits \cite{independent_sources}.  Both of these
+approaches could be leveraged to increase the quality of the data obtained
+from the sensors.
 
 \section{Conclusion}
 
@@ -690,7 +719,7 @@ draw and computational complexity of the random number generators.
 
 
 \bibliographystyle{plain}
-\bibliography{phase2}
+\bibliography{final_report}
 
 
 % that's all folks
