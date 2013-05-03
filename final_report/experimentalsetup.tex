@@ -68,6 +68,14 @@ as several modifications on adding data from the sensors to the kernel's entropy
 pool and drawing from the randomness devices.
 
 % NIST-> How does it work and how do we get it.
+NIST takes a binary input file and allows the user to define the length of the
+bitstream as well the number of bitstreams pulled from the file. After that is
+defined, the software will drive several statistical tests against the data.
+Each test defined what it means to ``pass'' the test for a given bitstream. The
+NIST statistical test suite then returns the proportion of tests that passed.
+For the testing done in this work, 10 bitstreams were used. For a 10 bitstream
+test, a passing random number generator is expected to have at least a 9 of the
+10 tests passing.
 
 %%% What was developed in order to perform the testing?
 \subsection{Data Collection Software}
@@ -75,16 +83,18 @@ pool and drawing from the randomness devices.
 In order to test the efficacy of using accelerometer and gyroscope sampling to
 feed the entropy pool, several pieces of software had to be developed to aid in
 the research. The software developed is split into two distinct applications
-that work together: the java application, and the entropy insertion daemon. This
-model was chosen because of limitations in the security model of the Android
-Operating System. Being able to add entropy to the kernel's pool is a privileged
-operation to prevent attackers from poisoning the host's randomness, but Android
-applications can only launch as a user process and then execute a privileged
-native application, such as \textit{su}. As a result of these requirements, the
-entropy insertion daemon is written as a native application that runs with 
-privileged authority and the entropy collection is written as an Android
-application that communicates with the entropy insertion daemon using a named
-pipe. 
+that work together: the java application, \textit{PollSensors} and the entropy
+insertion daemon, \textit{entd}. This model was chosen because of limitations in
+the security model of the Android Operating System. Being able to add entropy to
+the kernel's pool is a privileged operation to prevent attackers from poisoning
+the host's randomness, but Android applications can only launch as a user
+process and then execute a privileged native application, such as \textit{su}.
+As a result of these requirements, the entropy insertion daemon is written as a
+native application that runs with privileged authority and the entropy
+collection is written as an Android application that communicates with the
+entropy insertion daemon using a named pipe. This model allows for working
+within the confines of the security model of the Dalvik VM while performing
+privileged actions securely from a privileged native application.
 
 %%% The Testing Methodology:
 %%%  - What was done
@@ -92,5 +102,18 @@ pipe.
 %%%  - How was it analyzed 
 \subsection{Methodology}
 
+Data collection was done using the \textit{PollSensors} and \textit{entd}
+software on two Samsung Nexus S phones. Data collection was timed, and the goal
+was to collect at least 10 MB worth of binary data for analysis, though due to
+the speed at which certain devices operated this was not always possible. The
+purpose of timing the tests was to be able to calculate the average bitrate of
+the various randomness sources.
 
+Data was collected from the kernel's stock \textit{random} and \textit{urandom}
+devices, raw data from the gyroscope and accelerometer, bitfiltered versions of
+that data, Von Neumann whitened versions of that data, as well as from the
+\textit{random} device after raw and Von Neumann whitened data had been passed
+into the kernel's entropy pool. Once the data had been collected, the NIST
+statistical analysis software was used to determine if it had the statistical
+qualities of random data or not.
 
