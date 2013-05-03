@@ -62,7 +62,9 @@ will eliminate bias of the bits source towards a 1 or a 0. If the source is
 biased towards either value with probability $p$, the probabilities for 1,0
 and 0,1 are both equal to $p(1-p)$. With the same probability, they become a
 single entropic bit. Unfortunately, this method only works to eliminate bias,
-but not correlation between bits.
+but not correlation between bits. The proposed solution attempts to reduce
+correlation by using bits from samples taken $N$ samplings apart (in this case,
+$N = 1024$) and by using bit positions that are offset from each other. 
 
 The other method of improving the quality of the data that is pulled from the
 sensors that is explored in this work is basic bit filtering. This is the simple
