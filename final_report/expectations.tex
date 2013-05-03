@@ -2,15 +2,16 @@
 
 From the findings of \cite{voris}, accelerometers appear to be highly random. A
 high rate of sampling shows that they are fairly fast and should be able to
-provide a high rate of random bits per second when they are needed. The
-specification sheet for the accelerometer found on the Dragonboard shows that it
-is also efficient for power consumption.
-
+provide a high rate of random bits per second when they are needed.
 The apparent randomness of the accelerometer and gyroscope, accompanied with the
 relatively low power nature of the components as well as their ubiquity on smart
 phones, tends to suggest that they would be an excellent source of entropy for
-mobile platforms. A solution that pulls from these sensors should be easily
-deployed to several different platforms, including those that do not have the
-benefit of an on board hardware random number generator. As quality random
-numbers are necessary for most of the common cryptographic operations, such a
-system will be able to bring faster secure communication to more devices. 
+mobile platforms. 
+
+Fortunately, most of the interfaces needed in our design are highly portable,
+and as such our solution can easily be ported to several platforms. Platforms
+with better components are in a better position to take advantage of the
+improved speed and security that can come from including more data in the
+kernel's entropy pool.  As quality random numbers are necessary for most of the
+common cryptographic operations, such a system is able to bring faster
+secure communication to more devices. 
