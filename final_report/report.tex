@@ -517,7 +517,7 @@ they are an attractive means for adding entropy to a random number generator.
 \subsection{Problem Statement}
 Due to the increasing number of mobile platforms and their use of cryptographic algorithms and random number generators, there is demand for quick 
 and power efficient random number generators in the mobile environment. Specifically we targeted Android based smart phones,this grants us 
-access to the random and urandom devices given via the Linux kernel. The random device is the true random number generating option in the Linux 
+access to the \textit{random} and \textit{urandom} devices given via the Linux kernel. The random device is the true random number generating option in the Linux 
 environment, it is therefore a safe baseline for comparison as it is fairly consistent between Android devices. There are several issues with this current solution.
 Firstly, a performance decrease can be witnessed when the entropy pool, used by the random device, is depleted to 128 bits. This may be more prevalent in Android's
 Event Loop software model, as there isn't a clear multi-tasking structure. Another flaw comes to the scene when programmers and users try to circumvent
@@ -544,6 +544,7 @@ Therefore there is a clear need for a low power true random generator that is ap
 \input{experimentalsetup}
 
 \section{Results}
+\input{results}
 
 \section{Future Work}
 In this paper we present analysis for two sensors on an Android smartphone,
@@ -726,7 +727,7 @@ from the sensors.
     \centering
 	\includegraphics[angle=270,scale=0.5]{nist_results.png}
 	\caption{}
-    \label{nist_results}
+    \label{fig:nist_results}
 \end{figure}
 \twocolumn
 
