@@ -53,18 +53,26 @@ uniformity of the random numbers generated. The post-processing proposed for the
 scope of this paper is Von Neumann Whitening \cite{vn_whitening} and basic bit
 filtering. 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.25\textwidth]{vn_whitening.png}
+	\caption{von Neumann whitening across several samples.}
+	\label{fig:vnw}
+\end{figure}
+
 Von Neumann Whitening is a basic post processing procedure that takes two bits
 at a time and processes them to give three possible outcomes. If the two bits
 are the same, then they are simply discarded and there is no output. If the
 sequence of bits is 0,1 then the output is 1 and conversely if the sequence of
 bits is 1,0 then the output is 0. The rational behind this scheme is that it
 will eliminate bias of the bits source towards a 1 or a 0. If the source is
-biased towards either value with probability $p$, the probabilities for 1,0
-and 0,1 are both equal to $p(1-p)$. With the same probability, they become a
-single entropic bit. Unfortunately, this method only works to eliminate bias,
-but not correlation between bits. The proposed solution attempts to reduce
-correlation by using bits from samples taken $N$ samplings apart (in this case,
-$N = 1024$) and by using bit positions that are offset from each other. 
+biased towards either value with probability $p$, the probabilities for 1,0 and
+0,1 are both equal to $p(1-p)$. With the same probability, they become a single
+entropic bit. Unfortunately, this method only works to eliminate bias, but not
+correlation between bits. The proposed solution attempts to reduce correlation
+by using bits from samples taken $N$ samplings apart as can be seen in figure
+\ref{fig:vnw} (in this case, $N = 1024$) and by using bit positions that are
+offset from each other. 
 
 The other method of improving the quality of the data that is pulled from the
 sensors that is explored in this work is basic bit filtering. This is the simple

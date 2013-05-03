@@ -532,7 +532,8 @@ Therefore there is a clear need for a low power true random generator that is ap
 \section{Proposed Solution}
 %Kevin: possibly change to have independent post processing blocks and change the word daemon
 \begin{figure}[t]
-	\includegraphics[width=\columnwidth]{proposed_solution}
+    \centering
+	\includegraphics[width=0.8\columnwidth]{proposed_solution}
 	\caption{Block diagram of the proposed solution.  Our application will poll from the accelerometer and gyroscope (when requested), perform post-processing and feed random bits into the Linux entropy pool via system calls.}
 	\label{proposed_solution_block}
 \end{figure}
