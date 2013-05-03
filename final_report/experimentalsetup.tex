@@ -67,10 +67,30 @@ unprocessed data from the sensors, random devices from the stock system, as well
 as several modifications on adding data from the sensors to the kernel's entropy
 pool and drawing from the randomness devices.
 
+% NIST-> How does it work and how do we get it.
+
+%%% What was developed in order to perform the testing?
+\subsection{Data Collection Software}
+
+In order to test the efficacy of using accelerometer and gyroscope sampling to
+feed the entropy pool, several pieces of software had to be developed to aid in
+the research. The software developed is split into two distinct applications
+that work together: the java application, and the entropy insertion daemon. This
+model was chosen because of limitations in the security model of the Android
+Operating System. Being able to add entropy to the kernel's pool is a privileged
+operation to prevent attackers from poisoning the host's randomness, but Android
+applications can only launch as a user process and then execute a privileged
+native application, such as \textit{su}. As a result of these requirements, the
+entropy insertion daemon is written as a native application that runs with 
+privileged authority and the entropy collection is written as an Android
+application that communicates with the entropy insertion daemon using a named
+pipe. 
 
 %%% The Testing Methodology:
 %%%  - What was done
 %%%  - What data was gathered
 %%%  - How was it analyzed 
 \subsection{Methodology}
+
+
 
