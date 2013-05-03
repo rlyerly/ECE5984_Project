@@ -1,15 +1,15 @@
- 0.9	Frequency
- 1	BlockFrequency
- 0.9	CumulativeSums
- 1	Runs
- 1	LongestRun
- 1	Rank
- 1	FFT
- 0.97973	NonOverlappingTemplate
- 1	OverlappingTemplate
- 0	0.0000
- 0	0.7000
- 0	RandomExcursions
- 0	RandomExcursionsVariant
- 1	Serial
- 1	LinearComplexity
+ 0.9	
+ 1	
+ 0.9	
+ 1	
+ 1	
+ 1	
+ 1	
+ 0.97973	
+ 1	
+ 0	
+ 0.7	
+ 0	
+ 0	
+ 1	
+ 1	
