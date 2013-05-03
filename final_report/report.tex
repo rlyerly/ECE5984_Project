@@ -454,17 +454,19 @@ construction of a TRNG suitable for currently deployed (as well as future) Andro
 The Linux kernel, used as the basis for Android, has an entropy pool to provide data to applications that require truly random bits.
 This pool is populated via environmental noise from device drivers, timing differences between interrupts, and other various
 sources. These sources are viewed as true random number generators and therefore provide entropy suitable for key generation and other
-cryptography. Access to this pool is granted through the random device located at /dev/random \cite{random_man} and through the urandom device, 
+cryptography. Access to this pool is granted through the \textit{random} device located at /dev/random \cite{random_man} and through the \textit{urandom} device, 
 located at /dev/urandom. These two interfaces read from the entropy pool until a limit of 128 bits of remaining entropy is reached. Once
 the pool is drained below this bit limit, the two devices behave differently.  If the application reading from the pool is using the random
-interface, the application will block until more entropy is added to the pool. Alternatively, the urandom interface provides ``unlimited''
-entropy by rehashing existing entropy in the pool. The urandom device does not block, but forgoes true randomness and feeds pseudo random
+interface, the application will block until more entropy is added to the pool.
+Alternatively, the \textit{urandom} interface provides ``unlimited''
+entropy by rehashing existing entropy in the pool. The \textit{urandom} device does not block, but forgoes true randomness and feeds pseudo random
 data to the application. The pseudo-random nature of this device means that it is theoretically vulnerable to cryptographic attacks.
 
 %Seeder
-Developers have created an app available in the Google Play Store entitled Seeder, which attempts to cope with the blocking nature of the random
+Developers have created an app available in the Google Play Store entitled
+Seeder, which attempts to cope with the blocking nature of the \textit{random}
 device by ensuring that entropic bits are always available.  Their solution to provide entropy even when the random device's 128 bit limit is
-reached is to pipe pseudo-random data from the urandom device back into the entropy pool. The developers of Seeder claim this provides noticeable
+reached is to pipe pseudo-random data from the \textit{urandom} device back into the entropy pool. The developers of Seeder claim this provides noticeable
 speedups in day to day use of the Android operating system; however, this theoretically creates a security hole by reducing the true randomness of
 random to a pseudo-random level. As this application has been downloaded over ten thousand times in the past 30 days (as of the date this paper
 was written), it is clear that this is an area of interest to the Android user community.
