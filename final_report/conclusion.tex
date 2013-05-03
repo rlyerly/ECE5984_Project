@@ -6,17 +6,19 @@
 %%    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    The staticstics produced from the NIST testsuite lead us to conclude that the accelerometer 
+    The statistics produced from the NIST testsuite lead us to conclude that the accelerometer 
 and gyroscope alone are not good sources of entropy for our target platform. However, pure random sources are nearly
 impossible to find without the use of sufficient hashing. In our test case we found that these two 
  sources would need a substantial amount more post processing than the Von Neumann 
-whitenning technique provides. We also found that when blending any of our bit streams into 
-the random device's entropy pool, the internal hashing provided enough distrituion to pass NIST's statistical
-tests. The blending into the pool also provided a signifiant boost to the bitrate of the random device.
+whitening technique provides. We also found that when blending any of our bit streams into 
+the random device's entropy pool, the internal hashing provided enough distribution to pass NIST's statistical
+tests. The blending into the pool also provided a significant boost to the
+bitrate of the \textit{random} device.
 
     The current trend in the mobile phone hardware community is to package a hardware random
 number generators into the phone. These devices are very well tested for producing randomness in low power
-conditions. As for randomness on legacy devices, we found that the urandom device will produce large 
+conditions. As for randomness on legacy devices, we found that the
+\textit{urandom} device will produce large 
 amounts of data rapidly, the data produced will pass a suite of statistical benchmarks. Therefore, this may be sufficient for
 many applications running on Android devices. In conclusion, for access to true random numbers on mobile phones, there
 needs to be either a substantial amount of post processing or a dedicated piece of hardware for random number generation.
