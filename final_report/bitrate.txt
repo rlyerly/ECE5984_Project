@@ -1,0 +1,2 @@
+random	urandom		RawSensors	BitFiltering	vonNeumann	random+RawSensors	random+vonNeumann
+21	15506989	86127		2691		18482		11860			19894

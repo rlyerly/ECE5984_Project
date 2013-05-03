@@ -96,11 +96,6 @@
 % When switching from latex to pdflatex and vice-versa, the compiler may
 % have to be run twice to clear warning/error messages.
 
-
-
-
-
-
 % *** CITATION PACKAGES ***
 %
 \usepackage{cite}
@@ -764,6 +759,7 @@ from the sensors.
 \bibliographystyle{plain}
 \bibliography{final_report}
 
+<<<<<<< HEAD
 \appendix
 \onecolumn
 \begin{figure}[htbp]
@@ -773,6 +769,19 @@ from the sensors.
 \end{figure}
 \twocolumn
 
+=======
+% Appendx
+\appendix
+\section{Graphs}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{bitrate.png}
+	\caption{Observed bitrate in bits per second.  Note that the y-axis is 
+a logarithmic scale.}
+	\label{fig:bitrates}
+\end{figure}
+>>>>>>> 93e34a9ebfa56453d37ac0efdf112e35cb86a27f
 
 % that's all folks
 
