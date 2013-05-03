@@ -18,14 +18,14 @@ of random bits.  While the bitrates from the raw sensor data (accelerometer
 and gyroscope data combined) are relatively high, these bits fail most of the
 NIST tests.  With bit filtering, the proportion of tests that passed is higher
 than for the raw data, but overall the data does not prove to be statistically
-sound.  Data extracted using von-Neumann whitening is similarly characterized -
+sound.  Data extracted using von Neumann whitening is similarly characterized -
 a slightly larger proportion of tests on the data passed, but overall the data
 fails the test suite.  When data is run through the entropy pool, however, the
 situation improves.  The raw accelerometer and gyroscope data being fed to the
 pool is sufficiently dispersed (through hashing and mixing with other random
 sources) so that it becomes much more uniformly distributed; there is no
 reason to apply bit filtering to data because of this.  As expected, the
-von-Neumann whitened data processed in the entropy pool is statistically
+von Neumann whitened data processed in the entropy pool is statistically
 uniform, passing most of the tests in the testsuite.  These results demonstrate
 the strong statistical properties of mixing many independent sources using hash
 functions.  Finally it is interesting to note that both the random device and
@@ -48,11 +48,11 @@ device.  This is because the device is CPU-bound - it does not need to wait for
 any events for data to be generated.  The bitrates of the remaining devices are
 intuitive; utilizing raw data from the gyroscope and accelerometer as soon as it
 becomes available is faster than performing any sort of post-processing.  Bit
-filtering and von-Neumann whitening are slower than simply using raw data, but
+filtering and von Neumann whitening are slower than simply using raw data, but
 are faster than the other devices because they do not incur the overhead of
 stirring the data into the entropy pool.  Finally, the devices that utilize the
 entropy pool are the slowest (besides the random device, which is orders of
-magnitude slower).  Interestingly, the bitrate for von-Neumann whitened data run
+magnitude slower).  Interestingly, the bitrate for von Neumann whitened data run
 through the entropy pool is higher than the bitrate of the raw data run through
 the entropy pool - this highlights the indeterministic nature of the entropy
 pool.  While this graph indicates a hierarchy of bitrates, many of these devices
